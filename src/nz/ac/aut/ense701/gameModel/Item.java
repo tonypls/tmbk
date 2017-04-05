@@ -1,6 +1,6 @@
 package nz.ac.aut.ense701.gameModel;
 
-// kelvin is gay
+// kelvin is not gay
 /**
  * This class represents an item that can be found on the island.
  * 
