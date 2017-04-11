@@ -166,6 +166,14 @@ public class KiwiCountUI
         listObjects = new javax.swing.JList();
         btnCollect = new javax.swing.JButton();
         btnCount = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        RestartGame = new javax.swing.JMenuItem();
+        QuitGame = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kiwi Count");
@@ -522,7 +530,42 @@ public class KiwiCountUI
 
         pnlContent.add(pnlControls, java.awt.BorderLayout.EAST);
 
-        getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
+        getContentPane().add(pnlContent, java.awt.BorderLayout.PAGE_START);
+
+        jMenu1.setText("Select Level");
+
+        jMenuItem2.setText("Easy");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Medium");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Hard");
+        jMenu1.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Quit Game");
+
+        RestartGame.setText("Restart Game");
+        RestartGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RestartGameActionPerformed(evt);
+            }
+        });
+        jMenu2.add(RestartGame);
+
+        QuitGame.setText("Quit Game");
+        QuitGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuitGameActionPerformed(evt);
+            }
+        });
+        jMenu2.add(QuitGame);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -579,6 +622,25 @@ public class KiwiCountUI
     private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
         game.countKiwi();
     }//GEN-LAST:event_btnCountActionPerformed
+
+    private void QuitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitGameActionPerformed
+
+         JOptionPane.showMessageDialog(
+                    this, 
+                    game.getLoseMessage(), "Thank you for playing!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    System.exit(0);//Ending game after message pop-up
+        
+    }//GEN-LAST:event_QuitGameActionPerformed
+
+    private void RestartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestartGameActionPerformed
+        
+        JOptionPane.showMessageDialog(
+                    this, 
+                    game.getLoseMessage(), " Restarting game!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    game.createNewGame();// Restarting game after message popups.
+    }//GEN-LAST:event_RestartGameActionPerformed
     
     /**
      * Creates and initialises the island grid.
@@ -603,6 +665,8 @@ public class KiwiCountUI
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem QuitGame;
+    private javax.swing.JMenuItem RestartGame;
     private javax.swing.JButton btnCollect;
     private javax.swing.JButton btnCount;
     private javax.swing.JButton btnDrop;
@@ -611,6 +675,12 @@ public class KiwiCountUI
     private javax.swing.JButton btnMoveSouth;
     private javax.swing.JButton btnMoveWest;
     private javax.swing.JButton btnUse;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JLabel lblKiwisCounted;
     private javax.swing.JLabel lblPredators;
     private javax.swing.JList listInventory;
