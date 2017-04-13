@@ -546,7 +546,12 @@ public class KiwiCountUI
         Medium.setText("Medium");
         jMenu1.add(Medium);
 
-        High.setText("High");
+        High.setText("Hard");
+        High.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HighActionPerformed(evt);
+            }
+        });
         jMenu1.add(High);
 
         jMenuBar1.add(jMenu1);
@@ -639,6 +644,7 @@ public class KiwiCountUI
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_EasyActionPerformed
     
     /**
@@ -667,6 +673,10 @@ public class KiwiCountUI
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void HighActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HighActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HighActionPerformed
     
     /**
      * Creates and initialises the island grid.
