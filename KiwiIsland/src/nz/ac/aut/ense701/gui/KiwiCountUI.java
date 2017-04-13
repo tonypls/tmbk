@@ -166,6 +166,15 @@ public class KiwiCountUI
         listObjects = new javax.swing.JList();
         btnCollect = new javax.swing.JButton();
         btnCount = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        Easy = new javax.swing.JMenuItem();
+        Medium = new javax.swing.JMenuItem();
+        High = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        Exit = new javax.swing.JMenuItem();
+        Restart = new javax.swing.JMenuItem();
+        Help = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kiwi Count");
@@ -181,7 +190,7 @@ public class KiwiCountUI
         );
         pnlIslandLayout.setVerticalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 596, Short.MAX_VALUE)
         );
 
         pnlContent.add(pnlIsland, java.awt.BorderLayout.CENTER);
@@ -524,6 +533,54 @@ public class KiwiCountUI
 
         getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
 
+        jMenu1.setText("Select Level");
+
+        Easy.setText("Easy");
+        Easy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasyActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Easy);
+
+        Medium.setText("Medium");
+        jMenu1.add(Medium);
+
+        High.setText("High");
+        jMenu1.add(High);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Quit");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
+
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Exit);
+
+        Restart.setText("Restart");
+        Restart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RestartActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Restart);
+
+        jMenuBar1.add(jMenu2);
+
+        Help.setText("Help");
+        jMenuBar1.add(Help);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -579,6 +636,37 @@ public class KiwiCountUI
     private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
         game.countKiwi();
     }//GEN-LAST:event_btnCountActionPerformed
+
+    private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EasyActionPerformed
+    
+    /**
+     * Once user click Exit button, message will pop-ups and game ends.
+     */
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        
+        JOptionPane.showMessageDialog(
+                    this, 
+                    game.getLoseMessage(), "Thank you for playing!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    System.exit(0);//Ending game after message pop-up
+    }//GEN-LAST:event_ExitActionPerformed
+    /**
+     * Restart game after message pop-ups 
+     */
+    private void RestartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestartActionPerformed
+       
+        JOptionPane.showMessageDialog(
+                    this, 
+                    game.getLoseMessage(), " Restarting game!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    game.createNewGame();// Restarting game after message popups.
+    }//GEN-LAST:event_RestartActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2ActionPerformed
     
     /**
      * Creates and initialises the island grid.
@@ -603,6 +691,12 @@ public class KiwiCountUI
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Easy;
+    private javax.swing.JMenuItem Exit;
+    private javax.swing.JMenu Help;
+    private javax.swing.JMenuItem High;
+    private javax.swing.JMenuItem Medium;
+    private javax.swing.JMenuItem Restart;
     private javax.swing.JButton btnCollect;
     private javax.swing.JButton btnCount;
     private javax.swing.JButton btnDrop;
@@ -611,6 +705,9 @@ public class KiwiCountUI
     private javax.swing.JButton btnMoveSouth;
     private javax.swing.JButton btnMoveWest;
     private javax.swing.JButton btnUse;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblKiwisCounted;
     private javax.swing.JLabel lblPredators;
     private javax.swing.JList listInventory;
