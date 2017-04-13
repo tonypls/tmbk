@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.Set;
-// yo yo yo
+
 /**
  * This is the class that knows the Kiwi Island game rules and state
  * and enforces those rules.
