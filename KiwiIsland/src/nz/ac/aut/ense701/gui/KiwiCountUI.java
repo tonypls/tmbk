@@ -7,6 +7,7 @@ import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
+import nz.ac.aut.ense701.gameModel.Levels;
 
 /*
  * User interface form for Kiwi Island.
@@ -639,12 +640,14 @@ public class KiwiCountUI
     }//GEN-LAST:event_listInventoryValueChanged
 
     private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
-        game.countKiwi();
+        //game.countKiwi();
     }//GEN-LAST:event_btnCountActionPerformed
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
         // TODO add your handling code here:
         
+        Levels level = new Levels();
+        level.checkkforitem();
     }//GEN-LAST:event_EasyActionPerformed
     
     /**
