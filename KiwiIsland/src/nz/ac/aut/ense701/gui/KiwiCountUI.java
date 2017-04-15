@@ -2,7 +2,9 @@ package nz.ac.aut.ense701.gui;
 
 import java.awt.Component;
 import java.awt.GridLayout;
+import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
+import java.awt.event.*;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
@@ -11,13 +13,13 @@ import nz.ac.aut.ense701.gameModel.MoveDirection;
 /*
  * User interface form for Kiwi Island.
  * 
- * @author AS
- * @version July 2011
+ * @author AS update by Tony van Swet
+ * @version April 2017
  */
 
 public class KiwiCountUI 
     extends javax.swing.JFrame 
-    implements GameEventListener
+    implements GameEventListener, ActionListener, KeyListener
 {
 
     /**
@@ -29,11 +31,17 @@ public class KiwiCountUI
         assert game != null : "Make sure game object is created before UI";
         this.game = game;
         setAsGameListener();
+        addKeyListener(this);
+        setFocusable(true);
         initComponents();
         initIslandGrid();
         update();
     }
     
+    /**
+     * This method is called by the game model every time something changes.
+     * Trigger an update.
+     */
     /**
      * This method is called by the game model every time something changes.
      * Trigger an update.
@@ -623,6 +631,36 @@ public class KiwiCountUI
     private javax.swing.JLabel txtPlayerName;
     private javax.swing.JLabel txtPredatorsLeft;
     // End of variables declaration//GEN-END:variables
+    @Override
+    public void actionPerformed(ActionEvent e) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        int code = e.getKeyCode();
+        if(code == KeyEvent.VK_UP || code == KeyEvent.VK_W){
+        game.playerMove(MoveDirection.NORTH);
+        }
+        if(code == KeyEvent.VK_DOWN || code == KeyEvent.VK_S){
+        game.playerMove(MoveDirection.SOUTH);
+        }
+        if(code == KeyEvent.VK_LEFT || code == KeyEvent.VK_A){
+        game.playerMove(MoveDirection.WEST);
+        }
+        if(code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_D){
+        game.playerMove(MoveDirection.EAST);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private Game game;
 }
