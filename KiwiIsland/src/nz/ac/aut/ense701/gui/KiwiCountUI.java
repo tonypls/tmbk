@@ -3,11 +3,11 @@ package nz.ac.aut.ense701.gui;
 import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.JOptionPane;
-import nz.ac.aut.ense701.gameModel.EasyLevel;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
+import nz.ac.aut.ense701.gameModel.Levels;
 
 /*
  * User interface form for Kiwi Island.
@@ -650,17 +650,19 @@ public class KiwiCountUI
     }//GEN-LAST:event_listInventoryValueChanged
 
     private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
-        game.countKiwi();
+        //game.countKiwi();
     }//GEN-LAST:event_btnCountActionPerformed
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
         // TODO add your handling code here:
+
         //game.createNewGame();
         JOptionPane.showMessageDialog(
                     this, 
                     game.getPlayerMessage(), "You have selected easy level!",
                     JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();
+
     }//GEN-LAST:event_EasyActionPerformed
     
     /**
@@ -765,5 +767,5 @@ public class KiwiCountUI
     // End of variables declaration//GEN-END:variables
 
     private Game game;
-    private EasyLevel easy;
+    
 }
