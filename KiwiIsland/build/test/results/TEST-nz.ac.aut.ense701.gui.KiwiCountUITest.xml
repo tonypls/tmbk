@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="DESKTOP-NG34K0M" name="nz.ac.aut.ense701.gameModel.IslandTest" skipped="0" tests="12" time="0.047" timestamp="2017-04-15T22:02:31">
+<testsuite errors="0" failures="0" hostname="DESKTOP-NG34K0M" name="nz.ac.aut.ense701.gui.KiwiCountUITest" skipped="0" tests="1" time="0.251" timestamp="2017-04-15T22:02:33">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="AU" />
@@ -58,7 +58,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.IslandTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.IslandTest.xml crashfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junitvmwatcher7236905543072895832.properties propsfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junit6607549699496286309.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gui.KiwiCountUITest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gui.KiwiCountUITest.xml crashfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junitvmwatcher453526982922112372.properties propsfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junit27563196063132116.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -401,18 +401,39 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testRemoveOccupantPositionNotOnIsland" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testUpdatePlayerPosition" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testGetNumRows" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testAddOccupantOnIslandValidOccupant" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testRemoveOccupantNotAtPosition" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testAddOccupantNotOnIsland" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testAddOccupantNull" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testGetNumColumns" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testGetPredator" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testHasPredatorWithPredator" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testHasPredatorNoPredator" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.IslandTest" name="testRemoveOccupantOnIslandValidOccupant" time="0.0" />
-  <system-out><![CDATA[]]></system-out>
+  <testcase classname="nz.ac.aut.ense701.gui.KiwiCountUITest" name="testKeyPressed" time="0.208" />
+  <system-out><![CDATA[---------------------------------------------------
+|    |    |@   | F  | T  |    |    | PK |    |    |
+|~~~~|~~~~|....|....|....|~~~~|^^^^|^^^^|^^^^|^^^^|
+---------------------------------------------------
+|    |    |    |    | H  |    |    |    |    |    |
+|~~~~|####|^^^^|^^^^|^^^^|^^^^|^^^^|^^^^|^^^^|^^^^|
+---------------------------------------------------
+|    |    | H  |    | E  |    | P  |    | K  |    |
+|####|####|####|####|^^^^|^^^^|^^^^|^^^^|^^^^|~~~~|
+---------------------------------------------------
+| T  |    |    |    | P  | H  |    |    |    |    |
+|....|####|####|####|****|****|^^^^|....|~~~~|~~~~|
+---------------------------------------------------
+| F  | P  |    |    |    |    | F  |    |    |    |
+|....|^^^^|^^^^|^^^^|****|****|^^^^|....|~~~~|~~~~|
+---------------------------------------------------
+| H  |    | P  | T  | E  |    |    |    |    |    |
+|....|****|****|****|****|****|####|####|####|~~~~|
+---------------------------------------------------
+|    |    | K  |    | P  | H  | K  | E  | F  |    |
+|....|****|****|****|****|****|****|####|####|####|
+---------------------------------------------------
+| K  |    |    | F  | H  |    | H  | K  | T  |    |
+|****|****|****|****|****|~~~~|****|****|~~~~|~~~~|
+---------------------------------------------------
+|    |    | E  | K  |    |    |    |    | F  |    |
+|....|....|****|****|~~~~|~~~~|~~~~|****|****|....|
+---------------------------------------------------
+|    |    |    | K  | K  |    | K  | P  |    |    |
+|~~~~|....|****|****|****|~~~~|****|****|****|....|
+---------------------------------------------------
+keyPressed
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

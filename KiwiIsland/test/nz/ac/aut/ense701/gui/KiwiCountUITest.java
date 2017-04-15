@@ -95,6 +95,8 @@ public class KiwiCountUITest {
         } catch (IllegalArgumentException expected) {
             fail("The test case is a prototype.");
         }
+        
+        
 //        KiwiCountUI instance = null;
         //       instance.keyPressed(e);
         // TODO review the generated test code and remove the default call to fail.
