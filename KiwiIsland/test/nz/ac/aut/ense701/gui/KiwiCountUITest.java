@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Unit test for the UI keyboard input
+ * @author Tony van Swet
+ * @version April 2017
  */
 package nz.ac.aut.ense701.gui;
 
