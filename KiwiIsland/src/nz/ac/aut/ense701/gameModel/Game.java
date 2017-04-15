@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.Set;
+import nz.ac.aut.ense701.gui.KiwiCountUI;
 
 /**
  * This is the class that knows the Kiwi Island game rules and state
@@ -27,7 +28,7 @@ public class Game
     public static final int WEIGHT_INDEX = 3;
     public static final int MAXSIZE_INDEX = 4;
     public static final int SIZE_INDEX = 5;
-    
+   
     /**
      * A new instance of Kiwi island that reads data from "IslandData.txt".
      */
@@ -57,7 +58,8 @@ public class Game
         playerMessage = "";
         notifyGameEventListeners();
     }
-
+    
+    
     /***********************************************************************************************************************
      * Accessor methods for game data
     ************************************************************************************************************************/
@@ -684,6 +686,9 @@ public class Game
                 player.kill();
                 this.setLoseMessage(" You have run out of stamina");
             }
+//            if (player.getStaminaLevel() < 90.0) {
+//                this.setLoseMessage(" Your stamina is low, Please feed yourself");
+//            }
             else // Let player know what happened
             {
                 this.setPlayerMessage(hazard.getDescription() + " has reduced your stamina.");

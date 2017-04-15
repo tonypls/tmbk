@@ -3,6 +3,7 @@ package nz.ac.aut.ense701.gui;
 import java.awt.Component;
 import java.awt.GridLayout;
 import javax.swing.JOptionPane;
+import nz.ac.aut.ense701.gameModel.EasyLevel;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
@@ -170,7 +171,7 @@ public class KiwiCountUI
         jMenu1 = new javax.swing.JMenu();
         Easy = new javax.swing.JMenuItem();
         Medium = new javax.swing.JMenuItem();
-        High = new javax.swing.JMenuItem();
+        Hard = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         Exit = new javax.swing.JMenuItem();
         Restart = new javax.swing.JMenuItem();
@@ -227,6 +228,11 @@ public class KiwiCountUI
         pnlPlayerData.add(lblPlayerStamina, gridBagConstraints);
 
         progPlayerStamina.setStringPainted(true);
+        progPlayerStamina.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                progPlayerStaminaStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -544,15 +550,20 @@ public class KiwiCountUI
         jMenu1.add(Easy);
 
         Medium.setText("Medium");
-        jMenu1.add(Medium);
-
-        High.setText("Hard");
-        High.addActionListener(new java.awt.event.ActionListener() {
+        Medium.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HighActionPerformed(evt);
+                MediumActionPerformed(evt);
             }
         });
-        jMenu1.add(High);
+        jMenu1.add(Medium);
+
+        Hard.setText("Hard");
+        Hard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HardActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Hard);
 
         jMenuBar1.add(jMenu1);
 
@@ -644,7 +655,12 @@ public class KiwiCountUI
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
         // TODO add your handling code here:
-        
+        //game.createNewGame();
+        JOptionPane.showMessageDialog(
+                    this, 
+                    game.getPlayerMessage(), "You have selected easy level!",
+                    JOptionPane.INFORMATION_MESSAGE);
+        game.createNewGame();
     }//GEN-LAST:event_EasyActionPerformed
     
     /**
@@ -674,9 +690,26 @@ public class KiwiCountUI
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu2ActionPerformed
 
-    private void HighActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HighActionPerformed
+    private void HardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HardActionPerformed
+        JOptionPane.showMessageDialog(
+                    this, 
+                    game.getLoseMessage(), " You have selected Hard Level!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    game.createNewGame();// Restarting game after message popups.
+    }//GEN-LAST:event_HardActionPerformed
+
+    private void progPlayerStaminaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_progPlayerStaminaStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_HighActionPerformed
+       
+    }//GEN-LAST:event_progPlayerStaminaStateChanged
+
+    private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
+        JOptionPane.showMessageDialog(
+                    this, 
+                    game.getLoseMessage(), " You selected Medium Level!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    game.createNewGame();// Restarting game after message popups.
+    }//GEN-LAST:event_MediumActionPerformed
     
     /**
      * Creates and initialises the island grid.
@@ -703,8 +736,8 @@ public class KiwiCountUI
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Easy;
     private javax.swing.JMenuItem Exit;
+    private javax.swing.JMenuItem Hard;
     private javax.swing.JMenu Help;
-    private javax.swing.JMenuItem High;
     private javax.swing.JMenuItem Medium;
     private javax.swing.JMenuItem Restart;
     private javax.swing.JButton btnCollect;
@@ -732,4 +765,5 @@ public class KiwiCountUI
     // End of variables declaration//GEN-END:variables
 
     private Game game;
+    private EasyLevel easy;
 }

@@ -1,76 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package nz.ac.aut.ense701.gameModel;
+import nz.ac.aut.ense701.gameModel.Game;
+import nz.ac.aut.ense701.gui.KiwiCountUI;
 
+public class EasyLevel
+{
+    //Constants shared with UI to provide player data
 
-/**
- *
- * @author kelvin
- */
-public class EasyLevel {
-    
-    Player player;
-    
-    private void StaminaHint(){
-        
-         double d1 = player.getStaminaLevel();
-        double d2 = 100;
-      
-        int CheckStamina = Double.compare(d1, d2);
-        if ( CheckStamina <= 100 ) {
-             // output "please eat fruits to get more energy"
-    
-        }else if( CheckStamina <= 80){
-            
-            // output "please eat fruits to get more energy"           
-        }else if( CheckStamina <= 20){
-            
-        };  
-        
-        // try this too if above does not work with output
-        /* double d1 = player.getStaminaLevel();
-           double d2 = 100;
-           double d3 = 50;
-           double d4 = 20;
-      
-        int CheckStamina = Double.compare(d1, d2);
-        if ( CheckStamina <= d2 ) {
-        /output for when stamina = d2 (100)
-        }else{
-            return;
-        }
-        
-        int CheckStamina = Double.compare(d1, d);
-        if ( CheckStamina <= d ) {
-        /output for when stamina = d3 (50)
-        }else{
-            return;
-        }
-        
-        int CheckStamina = Double.compare(d1, d4);
-        if ( CheckStamina <= d2 ) {
-        /output for when stamina = d2 (20)
-        }else{
-            return;
-        }
-        */
+   // private Game game;
+    Game game = new Game();
+    //KiwiCountUI  gui  = new KiwiCountUI(game);
+    /**
+     * A new instance of Kiwi island that reads data from "IslandData.txt".
+     */
+    public EasyLevel() 
+    {   
         
     }
- 
-    private void CollectKiwiHint(){
-        
-        
- 
+    
+    public void easyGame()
+    {   
+//        this.game= game;
+       game.createNewGame();
+        //gui.setVisible(true);
     }
-    
-    private void TrapPredatorHint(){
-      
-    }
-    
-    
-    
     
 }
