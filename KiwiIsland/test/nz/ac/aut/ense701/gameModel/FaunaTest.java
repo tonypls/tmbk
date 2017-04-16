@@ -5,8 +5,9 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author AS
- * @version 2011
+ * @author AS Editited by Tony van Swet
+ * @version 16/04/2017
+ * 
  */
 public class FaunaTest {
     
