@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="DESKTOP-NG34K0M" name="nz.ac.aut.ense701.gameModel.GameTest" skipped="0" tests="34" time="1.124" timestamp="2017-04-15T22:21:02">
+<testsuite errors="0" failures="0" hostname="DESKTOP-NG34K0M" name="nz.ac.aut.ense701.gameModel.GameTest" skipped="0" tests="34" time="1.153" timestamp="2017-04-16T00:10:04">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="AU" />
@@ -58,10 +58,11 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.GameTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.GameTest.xml crashfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junitvmwatcher1311768293429932705.properties propsfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junit6116537778213447934.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.GameTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.GameTest.xml crashfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junitvmwatcher387750422157586635.properties propsfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junit7401212553029541683.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
+    <property name="manifest.encoding" value="UTF-8" />
     <property name="ap.supported.internal" value="true" />
     <property name="java.failonerror" value="true" />
     <property name="libs.javaee-endorsed-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
@@ -82,6 +83,7 @@
     <property name="libs.jsp-compilation-syscp.classpath" value="C:\Program Files\NetBeans 8.1\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\glassfish-jspparser-4.0.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\jstl-impl.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\jsf-2_2\javax.faces.jar" />
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_74\jre\lib\endorsed" />
     <property name="libs.groovy-all.src" value="" />
+    <property name="&gt;&gt;&gt;&gt;&gt;&gt;&gt;" value="85347d38396b94252c9d003ceac57aa1dd49d8b6" />
     <property name="netbeans.dynamic.classpath" value="C:\Program Files\NetBeans 8.1\platform\core\asm-all-5.0.1.jar;C:\Program Files\NetBeans 8.1\platform\core\core-base.jar;C:\Program Files\NetBeans 8.1\platform\core\core.jar;C:\Program Files\NetBeans 8.1\platform\core\org-netbeans-libs-asm.jar;C:\Program Files\NetBeans 8.1\platform\core\org-openide-filesystems-compat8.jar;C:\Program Files\NetBeans 8.1\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\core-base_ja.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\core-base_pt_BR.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\core-base_ru.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\core-base_zh_CN.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\core_ja.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\core_pt_BR.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\core_ru.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\core_zh_CN.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-netbeans-libs-asm_ja.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-netbeans-libs-asm_pt_BR.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-netbeans-libs-asm_ru.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-netbeans-libs-asm_zh_CN.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-openide-filesystems-compat8_ja.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-openide-filesystems-compat8_pt_BR.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-openide-filesystems-compat8_ru.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-openide-filesystems-compat8_zh_CN.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-openide-filesystems_ja.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-openide-filesystems_ru.jar;C:\Program Files\NetBeans 8.1\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\Program Files\NetBeans 8.1\nb\core\org-netbeans-upgrader.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\core_nb.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\core_nb_ja.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\core_nb_pt_BR.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\core_nb_ru.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\core_nb_zh_CN.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\org-netbeans-upgrader_ja.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\org-netbeans-upgrader_ru.jar;C:\Program Files\NetBeans 8.1\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
     <property name="java.vm.specification.version" value="1.8" />
     <property name="libs.hibernate4-support.src" value="" />
@@ -170,6 +172,7 @@
     <property name="libs.spring-framework300.src" value="" />
     <property name="libs.jstl.src" value="" />
     <property name="empty.dir" value="C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\empty" />
+    <property name="&lt;&lt;&lt;&lt;&lt;&lt;&lt;" value="HEAD" />
     <property name="version-output" value="java version &quot;1.8" />
     <property name="test.binarytestincludes" value="" />
     <property name="libs.hibernate4-persistencemodelgen.src" value="" />
@@ -301,8 +304,8 @@
     <property name="javac.source" value="1.6" />
     <property name="line.separator" value="&#xd;&#xa;" />
     <property name="java.specification.version" value="1.8" />
-    <property name="java.vm.info" value="mixed mode" />
     <property name="libs.jaxws21.maven-pom" value="" />
+    <property name="java.vm.info" value="mixed mode" />
     <property name="nb.junit.batch" value="true" />
     <property name="junit.forkmode" value="perTest" />
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_74\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_74\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_74\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_74\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_74\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_74\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_74\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_74\jre\classes" />
@@ -310,9 +313,9 @@
     <property name="built-jar.properties" value="C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
-    <property name="annotation.processing.enabled" value="true" />
-    <property name="libs.jpa2-persistence.src" value="" />
     <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
+    <property name="libs.jpa2-persistence.src" value="" />
+    <property name="annotation.processing.enabled" value="true" />
     <property name="libs.jsf20.src" value="" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="libs.DataBindingME-SVG.maven-pom" value="" />
@@ -324,15 +327,15 @@
     <property name="dist.dir" value="dist" />
     <property name="libs.groovy-all.javadoc" value="" />
     <property name="testng.debug.mode" value="" />
-    <property name="javac.fork" value="false" />
     <property name="libs.groovy-all.classpath" value="C:\Program Files\NetBeans 8.1\groovy\modules\ext\groovy-all.jar" />
+    <property name="javac.fork" value="false" />
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
     <property name="default.javac.source" value="1.8" />
     <property name="debug-transport-by-os" value="dt_shmem" />
-    <property name="libs.MySQLDriver.src" value="" />
     <property name="sun.jnu.encoding" value="Cp1252" />
-    <property name="java.runtime.version" value="1.8.0_74-b02" />
+    <property name="libs.MySQLDriver.src" value="" />
     <property name="build.test.results.dir" value="build/test/results" />
+    <property name="java.runtime.version" value="1.8.0_74-b02" />
     <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar" />
     <property name="user.timezone" value="" />
@@ -347,8 +350,8 @@
     <property name="endorsed.classpath" value="" />
     <property name="libs.absolutelayout.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.metro.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-api.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-extra.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-rt.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-tools.jar" />
+    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.jpa2-persistence.javadoc" value="C:\Program Files\NetBeans 8.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="C:\Program Files\NetBeans 8.1\mobility\modules\docs\netbeans_databindingme-api.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
@@ -359,18 +362,18 @@
     <property name="os.version" value="10.0" />
     <property name="application.args" value="" />
     <property name="libs.javaee-api-7.0.maven-pom" value="" />
-    <property name="sun.awt.enableExtraMouseButtons" value="true" />
     <property name="main.class.available" value="true" />
+    <property name="sun.awt.enableExtraMouseButtons" value="true" />
     <property name="sun.desktop" value="windows" />
     <property name="libs.hibernate4-persistence.src" value="" />
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="libs.restlib.javadoc" value="" />
-    <property name="libs.JAXB-ENDORSED.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\api\jaxb-api.jar" />
     <property name="nb.internal.action.name" value="test" />
-    <property name="libs.eclipselink.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\eclipselink\eclipselink.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
+    <property name="libs.JAXB-ENDORSED.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\api\jaxb-api.jar" />
     <property name="libs.javaee-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="libs.eclipselink.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\eclipselink\eclipselink.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
     <property name="libs.beans-binding.javadoc" value="C:\Program Files\NetBeans 8.1\java\docs\beansbinding-1.2.1-doc.zip" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
     <property name="libs.CopyLibs.classpath" value="C:\Program Files\NetBeans 8.1\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
@@ -388,53 +391,54 @@
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
     <property name="ant.file.KiwiIsland" value="C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build.xml" />
     <property name="main.class" value="nz.ac.aut.ense701.main.Main" />
-    <property name="build.dir" value="build" />
     <property name="libs.CopyLibs.src" value="" />
+    <property name="build.dir" value="build" />
     <property name="libs.jsp-compilation.classpath" value="C:\Program Files\NetBeans 8.1\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\glassfish-jspparser-4.0.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\jsf-2_2\javax.faces.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\jstl-api.jar;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant-launcher.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
-    <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
-    <property name="jdkBug6558476" value="false" />
+    <property name="file.encoding" value="Cp1252" />
     <property name="javadoc.nonavbar" value="false" />
+    <property name="jdkBug6558476" value="false" />
     <property name="libs.spring-webmvc4.0.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar" />
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
+    <property name="" value="======" />
   </properties>
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetNumRows" time="0.016" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCollectValid" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveValidNoHazards" time="0.032" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testIsPlayerMovePossibleInvalidMove" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseFoodValid" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseToolNoTrap" time="0.112" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveNonFatalHazardDead" time="0.015" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemTrapFinalPredator" time="0.016" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemBrokenTrap" time="0.079" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetNumRows" time="0.018" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCollectValid" time="0.006" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveValidNoHazards" time="0.015" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testIsPlayerMovePossibleInvalidMove" time="0.005" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseFoodValid" time="0.003" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseToolNoTrap" time="0.093" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveNonFatalHazardDead" time="0.008" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemTrapFinalPredator" time="0.012" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemBrokenTrap" time="0.062" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetNumColumns" time="0.006" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveFatalHazard" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveDeadPlayer" time="0.088" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveToInvalidPosition" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseTrapNoPredator" time="0.016" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testDropValid" time="0.095" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetKiwiCountInitial" time="0.006" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testIsPlayerMovePossibleValidMove" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanCollectNotCollectable" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseToolTrapNotBroken" time="0.094" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemToolFixTrap" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanCollectCollectable" time="0.016" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetInitialState" time="0.094" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemFoodCausesIncrease" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveNotEnoughStamina" time="0.015" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemFoodNoIncrease" time="0.094" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetPlayerValues" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseTrapValid" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetPlayer" time="0.1" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCollectNotCollectable" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemTrap" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testDropNotValidPositionFull" time="0.079" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCountKiwi" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseTool" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveNonFatalHazardNotDead" time="0.016" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveFatalHazard" time="0.006" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveDeadPlayer" time="0.079" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveToInvalidPosition" time="0.005" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseTrapNoPredator" time="0.005" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testDropValid" time="0.08" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetKiwiCountInitial" time="0.003" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testIsPlayerMovePossibleValidMove" time="0.003" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanCollectNotCollectable" time="0.084" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseToolTrapNotBroken" time="0.004" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemToolFixTrap" time="0.004" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanCollectCollectable" time="0.074" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetInitialState" time="0.001" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemFoodCausesIncrease" time="0.001" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveNotEnoughStamina" time="0.092" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemFoodNoIncrease" time="0.001" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetPlayerValues" time="0.001" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseTrapValid" time="0.092" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testGetPlayer" time="0.003" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCollectNotCollectable" time="0.003" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testUseItemTrap" time="0.081" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testDropNotValidPositionFull" time="0.004" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCountKiwi" time="0.005" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testCanUseTool" time="0.079" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GameTest" name="testPlayerMoveNonFatalHazardNotDead" time="0.001" />
   <system-out><![CDATA[---------------------------------------------------
 |    |    |@   | F  | T  |    |    | PK |    |    |
 |~~~~|~~~~|....|....|....|~~~~|^^^^|^^^^|^^^^|^^^^|

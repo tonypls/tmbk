@@ -9,6 +9,7 @@ import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
+import nz.ac.aut.ense701.gameModel.Levels;
 
 /*
  * User interface form for Kiwi Island.
@@ -16,18 +17,24 @@ import nz.ac.aut.ense701.gameModel.MoveDirection;
  * @author AS update by Tony van Swet
  * @version April 2017
  */
+<<<<<<< HEAD
 
 public class KiwiCountUI 
     extends javax.swing.JFrame 
     implements GameEventListener, ActionListener, KeyListener
 {
+=======
+public class KiwiCountUI
+        extends javax.swing.JFrame
+        implements GameEventListener {
+>>>>>>> ebed7d22f0cf01fad6c64ff7669dab5394121c53
 
     /**
      * Creates a GUI for the KiwiIsland game.
+     *
      * @param game the game object to represent with this GUI.
      */
-    public KiwiCountUI(Game game) 
-    {
+    public KiwiCountUI(Game game) {
         assert game != null : "Make sure game object is created before UI";
         this.game = game;
         setAsGameListener();
@@ -37,7 +44,7 @@ public class KiwiCountUI
         initIslandGrid();
         update();
     }
-    
+
     /**
      * This method is called by the game model every time something changes.
      * Trigger an update.
@@ -47,56 +54,47 @@ public class KiwiCountUI
      * Trigger an update.
      */
     @Override
-    public void gameStateChanged()
-    {
+    public void gameStateChanged() {
         update();
-        
+
         // check for "game over" or "game won"
-        if ( game.getState() == GameState.LOST )
-        {
+        if (game.getState() == GameState.LOST) {
             JOptionPane.showMessageDialog(
-                    this, 
+                    this,
                     game.getLoseMessage(), "Game over!",
                     JOptionPane.INFORMATION_MESSAGE);
             game.createNewGame();
-        }
-        else if ( game.getState() == GameState.WON )
-        {
+        } else if (game.getState() == GameState.WON) {
             JOptionPane.showMessageDialog(
-                    this, 
+                    this,
                     game.getWinMessage(), "Well Done!",
                     JOptionPane.INFORMATION_MESSAGE);
             game.createNewGame();
-        }
-        else if (game.messageForPlayer())
-        {
+        } else if (game.messageForPlayer()) {
             JOptionPane.showMessageDialog(
-                    this, 
+                    this,
                     game.getPlayerMessage(), "Important Information",
-                    JOptionPane.INFORMATION_MESSAGE);   
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
-    
-     private void setAsGameListener()
-    {
-       game.addGameEventListener(this); 
+
+    private void setAsGameListener() {
+        game.addGameEventListener(this);
     }
-     
+
     /**
      * Updates the state of the UI based on the state of the game.
      */
-    private void update()
-    {
+    private void update() {
         // update the grid square panels
         Component[] components = pnlIsland.getComponents();
-        for ( Component c : components )
-        {
+        for (Component c : components) {
             // all components in the panel are GridSquarePanels,
             // so we can safely cast
             GridSquarePanel gsp = (GridSquarePanel) c;
             gsp.update();
         }
-        
+
         // update player information
         int[] playerValues = game.getPlayerValues();
         txtPlayerName.setText(game.getPlayerName());
@@ -106,36 +104,36 @@ public class KiwiCountUI
         progBackpackWeight.setValue(playerValues[Game.WEIGHT_INDEX]);
         progBackpackSize.setMaximum(playerValues[Game.MAXSIZE_INDEX]);
         progBackpackSize.setValue(playerValues[Game.SIZE_INDEX]);
-        
+
         //Update Kiwi and Predator information
-        txtKiwisCounted.setText(Integer.toString(game.getKiwiCount()) );
+        txtKiwisCounted.setText(Integer.toString(game.getKiwiCount()));
         txtPredatorsLeft.setText(Integer.toString(game.getPredatorsRemaining()));
-        
+
         // update inventory list
         listInventory.setListData(game.getPlayerInventory());
         listInventory.clearSelection();
         listInventory.setToolTipText(null);
         btnUse.setEnabled(false);
         btnDrop.setEnabled(false);
-        
+
         // update list of visible objects
         listObjects.setListData(game.getOccupantsPlayerPosition());
         listObjects.clearSelection();
         listObjects.setToolTipText(null);
         btnCollect.setEnabled(false);
         btnCount.setEnabled(false);
-        
+
         // update movement buttons
         btnMoveNorth.setEnabled(game.isPlayerMovePossible(MoveDirection.NORTH));
-        btnMoveEast.setEnabled( game.isPlayerMovePossible(MoveDirection.EAST));
+        btnMoveEast.setEnabled(game.isPlayerMovePossible(MoveDirection.EAST));
         btnMoveSouth.setEnabled(game.isPlayerMovePossible(MoveDirection.SOUTH));
-        btnMoveWest.setEnabled( game.isPlayerMovePossible(MoveDirection.WEST));
+        btnMoveWest.setEnabled(game.isPlayerMovePossible(MoveDirection.WEST));
     }
-    
-    /** This method is called from within the constructor to
-     * initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is
-     * always regenerated by the Form Editor.
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -176,12 +174,14 @@ public class KiwiCountUI
         btnCount = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        Easy = new javax.swing.JMenuItem();
+        Medium = new javax.swing.JMenuItem();
+        Hard = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        RestartGame = new javax.swing.JMenuItem();
-        QuitGame = new javax.swing.JMenuItem();
+        Exit = new javax.swing.JMenuItem();
+        Restart = new javax.swing.JMenuItem();
+        Help = new javax.swing.JMenu();
+        rules = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kiwi Count");
@@ -197,7 +197,7 @@ public class KiwiCountUI
         );
         pnlIslandLayout.setVerticalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGap(0, 596, Short.MAX_VALUE)
         );
 
         pnlContent.add(pnlIsland, java.awt.BorderLayout.CENTER);
@@ -234,6 +234,11 @@ public class KiwiCountUI
         pnlPlayerData.add(lblPlayerStamina, gridBagConstraints);
 
         progPlayerStamina.setStringPainted(true);
+        progPlayerStamina.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                progPlayerStaminaStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -538,40 +543,77 @@ public class KiwiCountUI
 
         pnlContent.add(pnlControls, java.awt.BorderLayout.EAST);
 
-        getContentPane().add(pnlContent, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
 
         jMenu1.setText("Select Level");
 
-        jMenuItem2.setText("Easy");
-        jMenu1.add(jMenuItem2);
+        Easy.setText("Easy");
+        Easy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EasyActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Easy);
 
-        jMenuItem3.setText("Medium");
-        jMenu1.add(jMenuItem3);
+        Medium.setText("Medium");
+        Medium.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MediumActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Medium);
 
-        jMenuItem4.setText("Hard");
-        jMenu1.add(jMenuItem4);
+        Hard.setText("Hard");
+        Hard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HardActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Hard);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Quit Game");
-
-        RestartGame.setText("Restart Game");
-        RestartGame.addActionListener(new java.awt.event.ActionListener() {
+        jMenu2.setText("Quit");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RestartGameActionPerformed(evt);
+                jMenu2ActionPerformed(evt);
             }
         });
-        jMenu2.add(RestartGame);
 
-        QuitGame.setText("Quit Game");
-        QuitGame.addActionListener(new java.awt.event.ActionListener() {
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QuitGameActionPerformed(evt);
+                ExitActionPerformed(evt);
             }
         });
-        jMenu2.add(QuitGame);
+        jMenu2.add(Exit);
+
+        Restart.setText("Restart");
+        Restart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RestartActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Restart);
 
         jMenuBar1.add(jMenu2);
+
+        Help.setText("Help");
+        Help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HelpActionPerformed(evt);
+            }
+        });
+
+        rules.setText("Rules/instructions");
+        rules.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rulesActionPerformed(evt);
+            }
+        });
+        Help.add(rules);
+
+        jMenuBar1.add(Help);
 
         setJMenuBar(jMenuBar1);
 
@@ -605,8 +647,7 @@ public class KiwiCountUI
 
     private void listObjectsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listObjectsValueChanged
         Object occ = listObjects.getSelectedValue();
-        if ( occ != null )
-        {
+        if (occ != null) {
             btnCollect.setEnabled(game.canCollect(occ));
             btnCount.setEnabled(game.canCount(occ));
             listObjects.setToolTipText(game.getOccupantDescription(occ));
@@ -614,67 +655,124 @@ public class KiwiCountUI
     }//GEN-LAST:event_listObjectsValueChanged
 
     private void btnUseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUseActionPerformed
-        game.useItem( listInventory.getSelectedValue());
+        game.useItem(listInventory.getSelectedValue());
     }//GEN-LAST:event_btnUseActionPerformed
 
     private void listInventoryValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listInventoryValueChanged
-        Object item =  listInventory.getSelectedValue();
+        Object item = listInventory.getSelectedValue();
         btnDrop.setEnabled(true);
-        if ( item != null )
-        {
+        if (item != null) {
             btnUse.setEnabled(game.canUse(item));
             listInventory.setToolTipText(game.getOccupantDescription(item));
         }
     }//GEN-LAST:event_listInventoryValueChanged
 
     private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
-        game.countKiwi();
+        //game.countKiwi();
     }//GEN-LAST:event_btnCountActionPerformed
 
-    private void QuitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitGameActionPerformed
+    private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
+        // TODO add your handling code here:
 
-         JOptionPane.showMessageDialog(
-                    this, 
-                    game.getLoseMessage(), "Thank you for playing!",
-                    JOptionPane.INFORMATION_MESSAGE);
-                    System.exit(0);//Ending game after message pop-up
-        
-    }//GEN-LAST:event_QuitGameActionPerformed
-
-    private void RestartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestartGameActionPerformed
-        
+        //game.createNewGame();
         JOptionPane.showMessageDialog(
-                    this, 
-                    game.getLoseMessage(), " Restarting game!",
-                    JOptionPane.INFORMATION_MESSAGE);
-                    game.createNewGame();// Restarting game after message popups.
-    }//GEN-LAST:event_RestartGameActionPerformed
-    
+                this,
+                game.getPlayerMessage(), "You have selected easy level!",
+                JOptionPane.INFORMATION_MESSAGE);
+        game.createNewGame();
+
+    }//GEN-LAST:event_EasyActionPerformed
+
+    /**
+     * Once user click Exit button, message will pop-ups and game ends.
+     */
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+
+        JOptionPane.showMessageDialog(
+                this,
+                game.getLoseMessage(), "Thank you for playing!",
+                JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);//Ending game after message pop-up
+    }//GEN-LAST:event_ExitActionPerformed
+    /**
+     * Restart game after message pop-ups
+     */
+    private void RestartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestartActionPerformed
+
+        JOptionPane.showMessageDialog(
+                this,
+                game.getLoseMessage(), " Restarting game!",
+                JOptionPane.INFORMATION_MESSAGE);
+        game.createNewGame();// Restarting game after message popups.
+    }//GEN-LAST:event_RestartActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void HardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HardActionPerformed
+        JOptionPane.showMessageDialog(
+                this,
+                game.getLoseMessage(), " You have selected Hard Level!",
+                JOptionPane.INFORMATION_MESSAGE);
+        game.createNewGame();// Restarting game after message popups.
+    }//GEN-LAST:event_HardActionPerformed
+
+    private void progPlayerStaminaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_progPlayerStaminaStateChanged
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_progPlayerStaminaStateChanged
+
+    private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
+        JOptionPane.showMessageDialog(
+                this,
+                game.getLoseMessage(), " You selected Medium Level!",
+                JOptionPane.INFORMATION_MESSAGE);
+        game.createNewGame();// Restarting game after message popups.
+    }//GEN-LAST:event_MediumActionPerformed
+
+    private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_HelpActionPerformed
+
+    private void rulesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rulesActionPerformed
+        //When user click on "instructions" button, it pop-ups the
+        //dialogue box witout instructions and rules
+        JOptionPane.showMessageDialog(
+                this, "These are the Instruction:\n"
+                + "1.How to play\n"
+                + "2.Hints",
+                "Help",
+                JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_rulesActionPerformed
+
     /**
      * Creates and initialises the island grid.
      */
-    private void initIslandGrid()
-    {
+    private void initIslandGrid() {
         // Add the grid
-        int rows    = game.getNumRows();
+        int rows = game.getNumRows();
         int columns = game.getNumColumns();
         // set up the layout manager for the island grid panel
         pnlIsland.setLayout(new GridLayout(rows, columns));
         // create all the grid square panels and add them to the panel
         // the layout manager of the panel takes care of assigning them to the
         // the right position
-        for ( int row = 0 ; row < rows ; row++ )
-        {
-            for ( int col = 0 ; col < columns ; col++ )
-            {
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < columns; col++) {
                 pnlIsland.add(new GridSquarePanel(game, row, col));
             }
         }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem QuitGame;
-    private javax.swing.JMenuItem RestartGame;
+    private javax.swing.JMenuItem Easy;
+    private javax.swing.JMenuItem Exit;
+    private javax.swing.JMenuItem Hard;
+    private javax.swing.JMenu Help;
+    private javax.swing.JMenuItem Medium;
+    private javax.swing.JMenuItem Restart;
     private javax.swing.JButton btnCollect;
     private javax.swing.JButton btnCount;
     private javax.swing.JButton btnDrop;
@@ -686,9 +784,6 @@ public class KiwiCountUI
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JLabel lblKiwisCounted;
     private javax.swing.JLabel lblPredators;
     private javax.swing.JList listInventory;
@@ -697,6 +792,7 @@ public class KiwiCountUI
     private javax.swing.JProgressBar progBackpackSize;
     private javax.swing.JProgressBar progBackpackWeight;
     private javax.swing.JProgressBar progPlayerStamina;
+    private javax.swing.JMenuItem rules;
     private javax.swing.JLabel txtKiwisCounted;
     private javax.swing.JLabel txtPlayerName;
     private javax.swing.JLabel txtPredatorsLeft;
@@ -733,4 +829,5 @@ public class KiwiCountUI
 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     private Game game;
+
 }
