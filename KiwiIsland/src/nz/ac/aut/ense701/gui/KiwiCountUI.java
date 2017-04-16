@@ -17,17 +17,11 @@ import nz.ac.aut.ense701.gameModel.Levels;
  * @author AS update by Tony van Swet
  * @version April 2017
  */
-<<<<<<< HEAD
 
 public class KiwiCountUI 
     extends javax.swing.JFrame 
     implements GameEventListener, ActionListener, KeyListener
 {
-=======
-public class KiwiCountUI
-        extends javax.swing.JFrame
-        implements GameEventListener {
->>>>>>> ebed7d22f0cf01fad6c64ff7669dab5394121c53
 
     /**
      * Creates a GUI for the KiwiIsland game.
