@@ -2,7 +2,9 @@ package nz.ac.aut.ense701.gui;
 
 import java.awt.Component;
 import java.awt.GridLayout;
+import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
+import java.awt.event.*;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
@@ -11,13 +13,13 @@ import nz.ac.aut.ense701.gameModel.MoveDirection;
 /*
  * User interface form for Kiwi Island.
  * 
- * @author AS
- * @version July 2011
+ * @author AS update by Tony van Swet
+ * @version April 2017
  */
 
 public class KiwiCountUI 
     extends javax.swing.JFrame 
-    implements GameEventListener
+    implements GameEventListener, ActionListener, KeyListener
 {
 
     /**
@@ -29,11 +31,17 @@ public class KiwiCountUI
         assert game != null : "Make sure game object is created before UI";
         this.game = game;
         setAsGameListener();
+        addKeyListener(this);
+        setFocusable(true);
         initComponents();
         initIslandGrid();
         update();
     }
     
+    /**
+     * This method is called by the game model every time something changes.
+     * Trigger an update.
+     */
     /**
      * This method is called by the game model every time something changes.
      * Trigger an update.
@@ -166,6 +174,14 @@ public class KiwiCountUI
         listObjects = new javax.swing.JList();
         btnCollect = new javax.swing.JButton();
         btnCount = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        RestartGame = new javax.swing.JMenuItem();
+        QuitGame = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kiwi Count");
@@ -522,7 +538,42 @@ public class KiwiCountUI
 
         pnlContent.add(pnlControls, java.awt.BorderLayout.EAST);
 
-        getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
+        getContentPane().add(pnlContent, java.awt.BorderLayout.PAGE_START);
+
+        jMenu1.setText("Select Level");
+
+        jMenuItem2.setText("Easy");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Medium");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Hard");
+        jMenu1.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Quit Game");
+
+        RestartGame.setText("Restart Game");
+        RestartGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RestartGameActionPerformed(evt);
+            }
+        });
+        jMenu2.add(RestartGame);
+
+        QuitGame.setText("Quit Game");
+        QuitGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuitGameActionPerformed(evt);
+            }
+        });
+        jMenu2.add(QuitGame);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -579,6 +630,25 @@ public class KiwiCountUI
     private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
         game.countKiwi();
     }//GEN-LAST:event_btnCountActionPerformed
+
+    private void QuitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitGameActionPerformed
+
+         JOptionPane.showMessageDialog(
+                    this, 
+                    game.getLoseMessage(), "Thank you for playing!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    System.exit(0);//Ending game after message pop-up
+        
+    }//GEN-LAST:event_QuitGameActionPerformed
+
+    private void RestartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestartGameActionPerformed
+        
+        JOptionPane.showMessageDialog(
+                    this, 
+                    game.getLoseMessage(), " Restarting game!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                    game.createNewGame();// Restarting game after message popups.
+    }//GEN-LAST:event_RestartGameActionPerformed
     
     /**
      * Creates and initialises the island grid.
@@ -603,6 +673,8 @@ public class KiwiCountUI
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem QuitGame;
+    private javax.swing.JMenuItem RestartGame;
     private javax.swing.JButton btnCollect;
     private javax.swing.JButton btnCount;
     private javax.swing.JButton btnDrop;
@@ -611,6 +683,12 @@ public class KiwiCountUI
     private javax.swing.JButton btnMoveSouth;
     private javax.swing.JButton btnMoveWest;
     private javax.swing.JButton btnUse;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JLabel lblKiwisCounted;
     private javax.swing.JLabel lblPredators;
     private javax.swing.JList listInventory;
@@ -623,6 +701,36 @@ public class KiwiCountUI
     private javax.swing.JLabel txtPlayerName;
     private javax.swing.JLabel txtPredatorsLeft;
     // End of variables declaration//GEN-END:variables
+    @Override
+    public void actionPerformed(ActionEvent e) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        int code = e.getKeyCode();
+        if(code == KeyEvent.VK_UP || code == KeyEvent.VK_W){
+        game.playerMove(MoveDirection.NORTH);
+        }
+        if(code == KeyEvent.VK_DOWN || code == KeyEvent.VK_S){
+        game.playerMove(MoveDirection.SOUTH);
+        }
+        if(code == KeyEvent.VK_LEFT || code == KeyEvent.VK_A){
+        game.playerMove(MoveDirection.WEST);
+        }
+        if(code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_D){
+        game.playerMove(MoveDirection.EAST);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private Game game;
 }
