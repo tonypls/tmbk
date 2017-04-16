@@ -17,11 +17,9 @@ import nz.ac.aut.ense701.gameModel.Levels;
  * @author AS update by Tony van Swet
  * @version April 2017
  */
-
-public class KiwiCountUI 
-    extends javax.swing.JFrame 
-    implements GameEventListener, ActionListener, KeyListener
-{
+public class KiwiCountUI
+        extends javax.swing.JFrame
+        implements GameEventListener, ActionListener, KeyListener {
 
     /**
      * Creates a GUI for the KiwiIsland game.
@@ -734,9 +732,22 @@ public class KiwiCountUI
         //When user click on "instructions" button, it pop-ups the
         //dialogue box witout instructions and rules
         JOptionPane.showMessageDialog(
-                this, "These are the Instruction:\n"
-                + "1.How to play\n"
-                + "2.Hints",
+                this, "Instructions:\n"
+                + "Your Goal is to count each kiwi in the game and trap predators.\n"
+                + "Each square can contain either a predator(to trap), a kiwi(to count)\n"
+                + "or an item(to collect/use, set or fix).\n"
+                + "\n"
+                + "Use the arrow keys or press the NSEW buttons to move around the island.\n"
+                + "Each move uses stamina, the amount of stamina used each move depends\n"
+                + "on the terrain you have moved too."
+                + "If you run out of stamina or are severely \ninjured, you will loose the\n"
+                + "the game.\n"
+                + "\n"
+                + "The game is completed once you have counted all the kiwis and trapped\n"
+                + "all the predators.\n"
+                + "\n"
+                + "The goal of the game is to raise awareness of the conservation\n"
+                + "of kiwis.",
                 "Help",
                 JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_rulesActionPerformed
@@ -804,17 +815,17 @@ public class KiwiCountUI
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
-        if(code == KeyEvent.VK_UP || code == KeyEvent.VK_W){
-        game.playerMove(MoveDirection.NORTH);
+        if (code == KeyEvent.VK_UP || code == KeyEvent.VK_W) {
+            game.playerMove(MoveDirection.NORTH);
         }
-        if(code == KeyEvent.VK_DOWN || code == KeyEvent.VK_S){
-        game.playerMove(MoveDirection.SOUTH);
+        if (code == KeyEvent.VK_DOWN || code == KeyEvent.VK_S) {
+            game.playerMove(MoveDirection.SOUTH);
         }
-        if(code == KeyEvent.VK_LEFT || code == KeyEvent.VK_A){
-        game.playerMove(MoveDirection.WEST);
+        if (code == KeyEvent.VK_LEFT || code == KeyEvent.VK_A) {
+            game.playerMove(MoveDirection.WEST);
         }
-        if(code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_D){
-        game.playerMove(MoveDirection.EAST);
+        if (code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_D) {
+            game.playerMove(MoveDirection.EAST);
         }
     }
 
