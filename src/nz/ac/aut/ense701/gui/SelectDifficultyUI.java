@@ -5,6 +5,9 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import javax.swing.JFrame;
+import nz.ac.aut.ense701.gameModel.Game;
+
 /**
  *
  * @author Ben Smith
@@ -17,7 +20,11 @@ public class SelectDifficultyUI extends javax.swing.JPanel implements java.beans
      * Creates new customizer MainMenuUI
      */
     public SelectDifficultyUI() {
+        // System.out.println("created gui"); // debug
         initComponents();
+        this.setVisible(true);
+
+
     }
     
     public void setObject(Object bean) {
@@ -87,15 +94,15 @@ public class SelectDifficultyUI extends javax.swing.JPanel implements java.beans
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        System.out.println("medium button pressed");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+         System.out.println("easy button pressed");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+         System.out.println("hard button pressed");
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
