@@ -668,7 +668,9 @@ public class KiwiCountUI
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(
                 this,
-                " You have selected Easy Level!\n       Press OK to start!", " You have selected Easy Level!",
+
+                "You have selected Easy Level!\n          Press OK to start!", "New Game",
+
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();
         game.diff.easy();
@@ -692,7 +694,7 @@ public class KiwiCountUI
 
         JOptionPane.showMessageDialog(
                 this,
-                game.getPlayerMessage(), " Restarting game!",
+                " Restarting game!", " Restarting game!",
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();// Restarting game after message popups.
     }//GEN-LAST:event_RestartActionPerformed
@@ -704,7 +706,9 @@ public class KiwiCountUI
     private void HardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HardActionPerformed
         JOptionPane.showMessageDialog(
                 this,
-                " You have selected Hard Level!\n       Press OK to start!", " You have selected Hard Level!",
+
+                 "You have selected Hard Level!\n          Press OK to start!", "New Game",
+
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();// Restarting game after message popups.
         game.diff.hard();
@@ -718,7 +722,9 @@ public class KiwiCountUI
     private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
         JOptionPane.showMessageDialog(
                 this,
-                " You have selected Medium Level!\n       Press OK to start!", " You have selected Medium Level!",
+
+                "You have selected Medium Level!\n          Press OK to start!", "New Game",
+
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();// Restarting game after message popups.
         game.diff.medium();
