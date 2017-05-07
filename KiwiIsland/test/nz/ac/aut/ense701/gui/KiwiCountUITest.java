@@ -6,9 +6,12 @@
 package nz.ac.aut.ense701.gui;
 
 import java.awt.AWTException;
+import java.awt.Component;
 import java.awt.Robot;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.util.regex.Matcher;
+import javax.swing.JButton;
 import nz.ac.aut.ense701.gameModel.Game;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -100,7 +103,9 @@ public class KiwiCountUITest {
         // TODO review the generated test code and remove the default call to fail.
 
     }
-
+ 
+    
+    
     /**
      * Test of keyReleased method, of class KiwiCountUI.
      */
@@ -114,3 +119,5 @@ public class KiwiCountUITest {
 //        fail("The test case is a prototype.");
 //    }
 }
+
+
