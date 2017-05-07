@@ -28,16 +28,28 @@ public class Game
     public static final int WEIGHT_INDEX = 3;
     public static final int MAXSIZE_INDEX = 4;
     public static final int SIZE_INDEX = 5;
-   
+    public Difficulty diff = new Difficulty();
     /**
      * A new instance of Kiwi island that reads data from "IslandData.txt".
      */
     public Game() 
     {   
         eventListeners = new HashSet<GameEventListener>();
-
+        
         createNewGame();
     }
+    
+//    public void setDiffEasy(){
+//       diff.easy(); 
+//    }
+//    
+//     public void setDiffMedium(){
+//       diff.medium(); 
+//    }
+//    
+//      public void setDiffHard(){
+//       diff.hard(); 
+//    }
     
     
     /**
@@ -46,6 +58,7 @@ public class Game
      */
     public void createNewGame()
     {
+        
         totalPredators = 0;
         totalKiwis = 0;
         predatorsTrapped = 0;
@@ -686,7 +699,7 @@ public class Game
                 player.kill();
                 this.setLoseMessage(" You have run out of stamina");
             }
-//            if (player.getStaminaLevel() < 90.0) {
+//            else if (player.getStaminaLevel() < 90.0) {
 //                this.setLoseMessage(" Your stamina is low, Please feed yourself");
 //            }
             else // Let player know what happened
@@ -785,7 +798,8 @@ public class Game
         double playerMaxBackpackSize   = input.nextDouble();
         
         Position pos = new Position(island, playerPosRow, playerPosCol);
-        player = new Player(pos, playerName, 
+        
+        player = new Player(diff, pos, playerName, 
                 playerMaxStamina, 
                 playerMaxBackpackWeight, playerMaxBackpackSize);
         island.updatePlayerPosition(player);
@@ -842,6 +856,7 @@ public class Game
             }
             if ( occupant != null ) island.addOccupant(occPos, occupant);
         }
+       
     }    
 
 

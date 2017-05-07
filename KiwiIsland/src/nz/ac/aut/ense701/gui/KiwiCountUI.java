@@ -20,7 +20,7 @@ import nz.ac.aut.ense701.gameModel.Levels;
 public class KiwiCountUI
         extends javax.swing.JFrame
         implements GameEventListener, ActionListener, KeyListener {
-
+   private Game game;
     /**
      * Creates a GUI for the KiwiIsland game.
      *
@@ -665,14 +665,12 @@ public class KiwiCountUI
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
         // TODO add your handling code here:
-
-        //game.createNewGame();
         JOptionPane.showMessageDialog(
                 this,
                 game.getPlayerMessage(), "You have selected easy level!",
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();
-
+        game.diff.easy();
     }//GEN-LAST:event_EasyActionPerformed
 
     /**
@@ -693,7 +691,7 @@ public class KiwiCountUI
 
         JOptionPane.showMessageDialog(
                 this,
-                game.getLoseMessage(), " Restarting game!",
+                game.getPlayerMessage(), " Restarting game!",
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();// Restarting game after message popups.
     }//GEN-LAST:event_RestartActionPerformed
@@ -705,9 +703,10 @@ public class KiwiCountUI
     private void HardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HardActionPerformed
         JOptionPane.showMessageDialog(
                 this,
-                game.getLoseMessage(), " You have selected Hard Level!",
+                game.getPlayerMessage(), " You have selected Hard Level!",
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();// Restarting game after message popups.
+        game.diff.hard();
     }//GEN-LAST:event_HardActionPerformed
 
     private void progPlayerStaminaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_progPlayerStaminaStateChanged
@@ -718,9 +717,10 @@ public class KiwiCountUI
     private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
         JOptionPane.showMessageDialog(
                 this,
-                game.getLoseMessage(), " You selected Medium Level!",
+                game.getPlayerMessage(), " You selected Medium Level!",
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();// Restarting game after message popups.
+        game.diff.medium();
     }//GEN-LAST:event_MediumActionPerformed
 
     private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
@@ -741,7 +741,7 @@ public class KiwiCountUI
                 + "Each move uses stamina, the amount of stamina used each move depends\n"
                 + "on the terrain you have moved too."
                 + "If you run out of stamina or are severely \ninjured, you will loose the\n"
-                + "the game.\n"
+                + "the game."
                 + "\n"
                 + "The game is completed once you have counted all the kiwis and trapped\n"
                 + "all the predators.\n"
@@ -833,6 +833,6 @@ public class KiwiCountUI
     public void keyReleased(KeyEvent e) {
 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    private Game game;
+ 
 
 }

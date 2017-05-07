@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 import java.util.HashSet;
+import nz.ac.aut.ense701.gui.KiwiCountUI;
 
 /**
  * Player represents the player in the KiwiIsland game.
@@ -13,7 +14,9 @@ import java.util.HashSet;
  */
 public class Player 
 {
-    public static final double MOVE_STAMINA = 1.0;
+    private Difficulty diff;
+    KiwiCountUI kiwiUI;
+ //   public double MOVE_STAMINA = 1;//diff.getMOVE_STAMINA();
     
     private Position  position;
     private final String    name;
@@ -26,16 +29,18 @@ public class Player
     
     /**
      * Constructs a new player object.
-     * 
+     * @param diff the difficulty level of the player
      * @param position the initial position of the player
      * @param name the name of the player
      * @param maxStamina the maximum stamina level of the player
      * @param maxBackpackWeight the most weight that can be in a backpack
      * @param maxBackpackSize the maximum size items that will fit in the backpack     
      */    
-    public Player(Position position, String name, double maxStamina,
+    public Player(Difficulty diff, Position position, String name, double maxStamina,
                   double maxBackpackWeight, double maxBackpackSize)
     {
+       //Difficulty easy = new Difficulty();
+       this.diff= diff;
        this.position          = position;
        this.name              = name;
        this.maxStamina        = maxStamina;
@@ -46,6 +51,18 @@ public class Player
        this.backpack = new HashSet<Item>();
     }   
     
+     public Player(Position position, String name, double maxStamina,
+                  double maxBackpackWeight, double maxBackpackSize)
+    {
+       this.position          = position;
+       this.name              = name;
+       this.maxStamina        = maxStamina;
+       this.stamina = maxStamina;
+       this.maxBackpackWeight = maxBackpackWeight;
+       this.maxBackpackSize = maxBackpackSize;
+       this.alive = true;
+       this.backpack = new HashSet<Item>();
+    }  
     /*****************************************************************************************************
      * Accessor methods
      ****************************************************************************************************/
@@ -103,7 +120,7 @@ public class Player
      */
     public double getStaminaNeededToMove(Terrain terrain)
     {
-        double staminaNeeded = MOVE_STAMINA;
+        double staminaNeeded = diff.getMOVE_STAMINA();
         double load = getCurrentBackpackWeight() / maxBackpackWeight;
         // Twice as much is needed when the backpack is full
         staminaNeeded *= (1.0 + load);
@@ -297,8 +314,9 @@ public class Player
     public boolean collect(Item item)
     {
         boolean success = false;
-        if ( item != null && item.isOkToCarry() )
+        if ( item != null && item.isOkToCarry())
         {
+            
             double  addedSize   = getCurrentBackpackSize() + item.getSize();
             boolean enoughRoom  = (addedSize <= this.maxBackpackSize);
             double  addedWeight = getCurrentBackpackWeight() + item.getWeight();
