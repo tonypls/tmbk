@@ -14,8 +14,9 @@ import nz.ac.aut.ense701.gameModel.Levels;
 /*
  * User interface form for Kiwi Island.
  * 
- * @author AS update by Tony van Swet
+ * @author AS update by Tony van Swet & Mohammad
  * @version April 2017
+ * Pair Progamming 5/05/2017
  */
 public class KiwiCountUI
         extends javax.swing.JFrame
