@@ -5,6 +5,7 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import javax.swing.JOptionPane;
 import nz.ac.aut.ense701.gameModel.Game;
 
 /**
@@ -12,7 +13,10 @@ import nz.ac.aut.ense701.gameModel.Game;
  * @author kelvi
  */
 public class ChoosingLevels extends javax.swing.JFrame {
-
+    
+    
+    final Game game = new Game();
+    final KiwiCountUI games = new KiwiCountUI (game);
     /**
      * Creates new form ChoosingLevels
      */
@@ -37,14 +41,11 @@ public class ChoosingLevels extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Choose A level");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(270, 0, 160, 32);
 
         Easy.setText("Easy");
         Easy.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -53,8 +54,6 @@ public class ChoosingLevels extends javax.swing.JFrame {
                 EasyActionPerformed(evt);
             }
         });
-        getContentPane().add(Easy);
-        Easy.setBounds(40, 120, 120, 40);
 
         Medium.setText("Medium");
         Medium.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -63,8 +62,6 @@ public class ChoosingLevels extends javax.swing.JFrame {
                 MediumActionPerformed(evt);
             }
         });
-        getContentPane().add(Medium);
-        Medium.setBounds(280, 120, 120, 40);
 
         Hard.setText("Hard");
         Hard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -73,8 +70,6 @@ public class ChoosingLevels extends javax.swing.JFrame {
                 HardActionPerformed(evt);
             }
         });
-        getContentPane().add(Hard);
-        Hard.setBounds(550, 120, 120, 40);
 
         Quit.setText("Quit");
         Quit.setToolTipText("");
@@ -84,30 +79,64 @@ public class ChoosingLevels extends javax.swing.JFrame {
                 QuitActionPerformed(evt);
             }
         });
-        getContentPane().add(Quit);
-        Quit.setBounds(570, 330, 120, 40);
 
         jLabel2.setBackground(new java.awt.Color(0, 51, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/bush.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 740, 400);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(280, 280, 280)
+                .addComponent(Medium, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(570, 570, 570)
+                .addComponent(Quit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(Easy, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(550, 550, 550)
+                .addComponent(Hard, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(Medium, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(330, 330, 330)
+                .addComponent(Quit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(Easy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(Hard, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
-       final Game game = new Game();
-       final KiwiCountUI games = new KiwiCountUI (game);
-       
+             
        games.setVisible(true);
+       game.diff.easy();
+       dispose();
     }//GEN-LAST:event_EasyActionPerformed
 
     private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
-        final Game game = new Game();
-       final KiwiCountUI games = new KiwiCountUI (game);
-       
        games.setVisible(true);
+       game.diff.medium();
+       dispose();
     }//GEN-LAST:event_MediumActionPerformed
 
     private void QuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitActionPerformed
@@ -115,10 +144,9 @@ public class ChoosingLevels extends javax.swing.JFrame {
     }//GEN-LAST:event_QuitActionPerformed
 
     private void HardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HardActionPerformed
-        final Game game = new Game();
-       final KiwiCountUI games = new KiwiCountUI (game);
-       
        games.setVisible(true);
+       game.diff.hard();
+       dispose();
     }//GEN-LAST:event_HardActionPerformed
 
     /**

@@ -22,6 +22,8 @@ public class KiwiCountUI
         extends javax.swing.JFrame
         implements GameEventListener, ActionListener, KeyListener {
    private Game game;
+   
+   
     /**
      * Creates a GUI for the KiwiIsland game.
      *
