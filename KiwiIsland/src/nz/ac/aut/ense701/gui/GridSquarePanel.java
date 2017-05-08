@@ -1,6 +1,10 @@
 package nz.ac.aut.ense701.gui;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import nz.ac.aut.ense701.gameModel.Game;
@@ -21,6 +25,8 @@ public class GridSquarePanel extends javax.swing.JPanel
      * @param row the row to represent
      * @param column the column to represent
      */
+       
+
     public GridSquarePanel(Game game, int row, int column)
     {
         this.game   = game;
@@ -39,16 +45,17 @@ public class GridSquarePanel extends javax.swing.JPanel
         boolean squareVisible = game.isVisible(row, column);
         boolean squareExplored = game.isExplored(row, column);
         
-        Color      color;
-        
+        ImageIcon image = null;//new ImageIcon("images/blank.png");
+
         switch ( terrain )
         {
-            case SAND     : color = Color.YELLOW; break;
-            case FOREST   : color = Color.GREEN;  break;
-            case WETLAND : color = Color.BLUE; break;
-            case SCRUB : color = Color.DARK_GRAY;   break;
-            case WATER    : color = Color.CYAN;   break;
-            default  : color = Color.LIGHT_GRAY; break;
+            case SAND     : image = new ImageIcon("images/sand.png"); break;
+            case FOREST   : image = new ImageIcon("images/forest.png"); break;
+            case WETLAND : image = new ImageIcon("images/wetland.png"); break;
+            case SCRUB : image = new ImageIcon("images/scrub.png"); break;
+            case WATER    : image = new ImageIcon("images/water.png"); break;
+            default  : image = null; break;
+        
         }
         
         if ( squareExplored || squareVisible )
@@ -56,24 +63,39 @@ public class GridSquarePanel extends javax.swing.JPanel
             // Set the text of the JLabel according to the occupant
             lblText.setText(game.getOccupantStringRepresentation(row,column));
             // Set the colour. 
+           
+            
             if ( squareVisible && !squareExplored ) 
             {
                 // When explored the colour is brighter
+                
+                /*
                 color = new Color(Math.min(255, color.getRed()   + 128), 
                                   Math.min(255, color.getGreen() + 128), 
                                   Math.min(255, color.getBlue()  + 128));
+                */
             }
-            lblText.setBackground(color);
+            //lblText.setBackground(color);
             // set border colour according to 
             // whether the player is in the grid square or not
             setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);
         }
-        else
-        {
+        else {
             lblText.setText("");
             lblText.setBackground(null);
-            setBorder(normalBorder);
+            image = null;
+            
         }
+
+//        if (image == null){
+//            image = new ImageIcon("images/blank.png");
+//        }
+        
+        JLabel lblImage = new JLabel();
+        lblImage.setIcon(image);
+        this.add(lblImage);
+        
+        
     }
     
     /** This method is called from within the constructor to
