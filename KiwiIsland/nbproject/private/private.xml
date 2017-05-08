@@ -4,10 +4,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/main/Main.java</file>
-            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/test/nz/ac/aut/ense701/gui/GridSquarePanelTest.java</file>
+            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/gameModel/GridSquare.java</file>
+            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/gameModel/GameState.java</file>
+            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/gameModel/Difficulty.java</file>
             <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/gui/GridSquarePanel.java</file>
-            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/gameModel/GameEventListener.java</file>
+            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/gameModel/Island.java</file>
+            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/gameModel/Game.java</file>
+            <file>file:/C:/Users/Ben%20Smith/Documents/tmbk/KiwiIsland/src/nz/ac/aut/ense701/gui/KiwiCountUI.java</file>
         </group>
     </open-files>
 </project-private>
