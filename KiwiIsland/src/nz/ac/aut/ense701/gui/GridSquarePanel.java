@@ -25,8 +25,7 @@ public class GridSquarePanel extends javax.swing.JPanel
      * @param row the row to represent
      * @param column the column to represent
      */
-       
-
+      
     public GridSquarePanel(Game game, int row, int column)
     {
         this.game   = game;
@@ -45,8 +44,11 @@ public class GridSquarePanel extends javax.swing.JPanel
         boolean squareVisible = game.isVisible(row, column);
         boolean squareExplored = game.isExplored(row, column);
         
+        // create a new imageIcon object
         ImageIcon image = null;//new ImageIcon("images/blank.png");
+        JLabel lblImage = new JLabel(); // create a new label
 
+        // create a new Icon image depending on the type of terrain
         switch ( terrain )
         {
             case SAND     : image = new ImageIcon("images/sand.png"); break;
@@ -64,37 +66,42 @@ public class GridSquarePanel extends javax.swing.JPanel
             lblText.setText(game.getOccupantStringRepresentation(row,column));
             // Set the colour. 
            
-            
+            /*
             if ( squareVisible && !squareExplored ) 
             {
                 // When explored the colour is brighter
                 
-                /*
                 color = new Color(Math.min(255, color.getRed()   + 128), 
                                   Math.min(255, color.getGreen() + 128), 
                                   Math.min(255, color.getBlue()  + 128));
-                */
+                
             }
-            //lblText.setBackground(color);
+            //lblText.setBackground(white);
+            */
+            
             // set border colour according to 
             // whether the player is in the grid square or not
             setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);
+            
         }
         else {
             lblText.setText("");
-            lblText.setBackground(null);
             image = null;
+            //this.remove(lblImage);
+        }
+        
+        if (image == null){
+            lblImage.setVisible(false);
+        } else {
+            
+                    
+        // add the imageIcon to the gridsquare panel
+        lblImage.setIcon(image); // add the image to the label
+
+        this.add(lblImage); // add the jlabel image to the current gridsquare   
             
         }
 
-//        if (image == null){
-//            image = new ImageIcon("images/blank.png");
-//        }
-        
-        JLabel lblImage = new JLabel();
-        lblImage.setIcon(image);
-        this.add(lblImage);
-        
         
     }
     
