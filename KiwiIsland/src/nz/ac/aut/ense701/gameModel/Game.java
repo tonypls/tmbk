@@ -1,5 +1,7 @@
 package nz.ac.aut.ense701.gameModel;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,7 +30,8 @@ public class Game
     public static final int WEIGHT_INDEX = 3;
     public static final int MAXSIZE_INDEX = 4;
     public static final int SIZE_INDEX = 5;
-    public Difficulty diff = new Difficulty();
+    public Difficulty diff = new Difficulty(); 
+    
     /**
      * A new instance of Kiwi island that reads data from "IslandData.txt".
      */
@@ -38,18 +41,7 @@ public class Game
         
         createNewGame();
     }
-    
-//    public void setDiffEasy(){
-//       diff.easy(); 
-//    }
-//    
-//     public void setDiffMedium(){
-//       diff.medium(); 
-//    }
-//    
-//      public void setDiffHard(){
-//       diff.hard(); 
-//    }
+   
     
     
     /**
@@ -70,6 +62,7 @@ public class Game
         loseMessage = "";
         playerMessage = "";
         notifyGameEventListeners();
+        
     }
     
     
@@ -526,7 +519,9 @@ public class Game
                     
             // Is there a hazard?
             checkForHazard();
-
+//            if(player.getStaminaLevel()<90.0){
+//            this.setStaminaWarning("need stamina");
+//            }
             updateGameState();            
         }
         return successfulMove;
@@ -614,7 +609,6 @@ public class Game
     {
         loseMessage = message;
     }
-    
     /**
      * Set a message for the player
      * @param message 
@@ -699,9 +693,10 @@ public class Game
                 player.kill();
                 this.setLoseMessage(" You have run out of stamina");
             }
-//            else if (player.getStaminaLevel() < 90.0) {
-//                this.setLoseMessage(" Your stamina is low, Please feed yourself");
-//            }
+            
+            else if (player.getStaminaLevel() < 90.0) {
+                this.setLoseMessage(" Your stamina is low, Please feed yourself");
+            }
             else // Let player know what happened
             {
                 this.setPlayerMessage(hazard.getDescription() + " has reduced your stamina.");

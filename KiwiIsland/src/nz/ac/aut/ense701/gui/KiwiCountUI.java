@@ -49,7 +49,62 @@ public class KiwiCountUI
     @Override
     public void gameStateChanged() {
         update();
-
+            //Conditions for Easy level, pop-up messages for user
+            //if stamina level goes below 75% or below 50% or 20% message pops-up
+            if(game.diff.MOVE_STAMINA==0.5){
+            if((game.getPlayer().getStaminaLevel()<75.0)&&game.getPlayer().getStaminaLevel()>73.0){
+              JOptionPane.showMessageDialog(
+                    this,"Hint:\n"
+                    + "Your Stamina is getting Low!",
+                     "Easy Level", 
+                    JOptionPane.INFORMATION_MESSAGE);  
+        }else if((game.getPlayer().getStaminaLevel()<50.0)&&game.getPlayer().getStaminaLevel()>48.0){
+              JOptionPane.showMessageDialog(  
+                    this,"Hint:\n"
+                     +"Your Stamina is Low, Please feed yourself!",
+                     "Easy Level",
+                    JOptionPane.INFORMATION_MESSAGE); 
+        }else if((game.getPlayer().getStaminaLevel()<20.0)&&game.getPlayer().getStaminaLevel()>18.0){
+              JOptionPane.showMessageDialog(  
+                    this,"Hint:\n"
+                     +"Your Stamina is very Low, Please feed yourself!\n"
+                     +"You need to use collected itmes to increase your stamina.",
+                     "Easy Level",
+                    JOptionPane.INFORMATION_MESSAGE); 
+        }
+    }       
+            //Condition for Hard level, pop-up message for user since its a hard level
+            //there will be ony one conditiond and only one hint for user
+            //if stamina level goes below 20% message pops-up
+            if(game.diff.MOVE_STAMINA==2.0){
+            if((game.getPlayer().getStaminaLevel()<20.0)&&game.getPlayer().getStaminaLevel()>18.0){
+              JOptionPane.showMessageDialog(  
+                    this,"Hint:\n"
+                     +"Your Stamina is very Low, Please feed yourself!\n"
+                     +"You need to use collected itmes to increase your stamina.",
+                     "Hard Level",
+                    JOptionPane.INFORMATION_MESSAGE); 
+        }
+    } 
+            //Conditions for Medium level, pop-up messages for user
+            //if stamina level goes below 50% or below 20% then message pops-up
+            if(game.diff.MOVE_STAMINA==1.0){
+            if((game.getPlayer().getStaminaLevel()<50.0)&&game.getPlayer().getStaminaLevel()>48.0){
+              JOptionPane.showMessageDialog(  
+                    this,"Hint:\n"
+                     +"Your Stamina is Low, Please feed yourself!",
+                     "Medium Level",
+                    JOptionPane.INFORMATION_MESSAGE); 
+        }else if((game.getPlayer().getStaminaLevel()<20.0)&&game.getPlayer().getStaminaLevel()>18.0){
+              JOptionPane.showMessageDialog(  
+                    this,"Hint:\n"
+                     +"Your Stamina is very Low, Please feed yourself!\n"
+                     +"You need to use collected itmes to increase your stamina.",
+                     "Medium Level",
+                    JOptionPane.INFORMATION_MESSAGE); 
+        }
+    }         
+            
         // check for "game over" or "game won"
         if (game.getState() == GameState.LOST) {
             JOptionPane.showMessageDialog(
@@ -69,6 +124,7 @@ public class KiwiCountUI
                     game.getPlayerMessage(), "Important Information",
                     JOptionPane.INFORMATION_MESSAGE);
         }
+        
     }
 
     private void setAsGameListener() {

@@ -13,7 +13,8 @@ public class IslandTest extends junit.framework.TestCase
     Island testIsland;
     Position onIsland;
     Position notOnIsland;
-    Predator cat; 
+    Predator cat;
+    Difficulty diff;
     /**
      * Default constructor for test class IslandTest
      */
@@ -33,6 +34,7 @@ public class IslandTest extends junit.framework.TestCase
         onIsland = new Position(testIsland, 1,0); 
         notOnIsland = Position.NOT_ON_ISLAND;
         cat = new Predator(onIsland, "cat", "A hunting cat");
+        diff = new Difficulty();
     }
 
     /**
