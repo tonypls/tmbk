@@ -11,7 +11,7 @@ package nz.ac.aut.ense701.gameModel;
  */
 public class Difficulty {
    public double MOVE_STAMINA = 1.0;
-   Player player;
+  // Player player;  Not sure why this was here- Tony
   
 public Difficulty(){
   this.MOVE_STAMINA=1.0;     

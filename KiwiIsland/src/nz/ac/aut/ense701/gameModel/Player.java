@@ -14,7 +14,7 @@ import nz.ac.aut.ense701.gui.KiwiCountUI;
  */
 public class Player 
 {
-    private Difficulty diff;
+    public Difficulty diff;
     KiwiCountUI kiwiUI;
  //   public double MOVE_STAMINA = 1;//diff.getMOVE_STAMINA();
     
@@ -40,7 +40,7 @@ public class Player
                   double maxBackpackWeight, double maxBackpackSize)
     {
        //Difficulty easy = new Difficulty();
-       this.diff= diff;
+       this.diff              = diff;
        this.position          = position;
        this.name              = name;
        this.maxStamina        = maxStamina;
@@ -54,6 +54,7 @@ public class Player
      public Player(Position position, String name, double maxStamina,
                   double maxBackpackWeight, double maxBackpackSize)
     {
+       this.diff              = new Difficulty();
        this.position          = position;
        this.name              = name;
        this.maxStamina        = maxStamina;
