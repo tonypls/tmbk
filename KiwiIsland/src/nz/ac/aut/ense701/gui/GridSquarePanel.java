@@ -1,9 +1,22 @@
 package nz.ac.aut.ense701.gui;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import nz.ac.aut.ense701.gameModel.Game;
+import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.Terrain;
 
 /*
@@ -21,6 +34,9 @@ public class GridSquarePanel extends javax.swing.JPanel
      * @param row the row to represent
      * @param column the column to represent
      */
+      
+    BufferedImage image;
+    
     public GridSquarePanel(Game game, int row, int column)
     {
         this.game   = game;
@@ -29,6 +45,22 @@ public class GridSquarePanel extends javax.swing.JPanel
         initComponents();
     }
 
+    // this method is used by update() to load images from file
+    public void setImage(String file){   
+        try {
+            image = ImageIO.read(new File(file));
+        } catch (IOException ex) {
+            Logger.getLogger(GridSquarePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    // override the BufferedImage method to update and draw the image set by update() method
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(image, 1, 0, null);        
+    }
+    
     /**
      * Updates the representation of the grid square panel.
      */
@@ -39,41 +71,65 @@ public class GridSquarePanel extends javax.swing.JPanel
         boolean squareVisible = game.isVisible(row, column);
         boolean squareExplored = game.isExplored(row, column);
         
-        Color      color;
+        //ImageIcon image = null;//new ImageIcon("images/blank.png");
+        JLabel lblImage = new JLabel(); // create a new label to put an image on
         
+        // call the method to set a new Buffered image to this panel
         switch ( terrain )
         {
-            case SAND     : color = Color.YELLOW; break;
-            case FOREST   : color = Color.GREEN;  break;
-            case WETLAND : color = Color.BLUE; break;
-            case SCRUB : color = Color.DARK_GRAY;   break;
-            case WATER    : color = Color.CYAN;   break;
-            default  : color = Color.LIGHT_GRAY; break;
+            case SAND     : setImage("images/sand.png"); break;// = new ImageIcon("images/sand.png"); break;
+            case FOREST   : setImage("images/forest.png"); break;
+            case WETLAND : setImage("images/wetland.png"); break;
+            case SCRUB : setImage("images/scrub.png"); break;
+            case WATER    : setImage("images/water.png"); break;
+            default  : image = null; break;
         }
+       
+// this is old code that use to change the graphics, trying BufferedImage instead of IconImage
+//        switch ( terrain )
+//        {
+//            case SAND     : setImage("images/forest.png");// = new ImageIcon("images/sand.png"); break;
+//            case FOREST   : image = new ImageIcon("images/forest.png"); break;
+//            case WETLAND : image = new ImageIcon("images/wetland.png"); break;
+//            case SCRUB : image = new ImageIcon("images/scrub.png"); break;
+//            case WATER    : image = new ImageIcon("images/water.png"); break;
+//            default  : image = null; break;
+//        }
         
         if ( squareExplored || squareVisible )
         {
             // Set the text of the JLabel according to the occupant
             lblText.setText(game.getOccupantStringRepresentation(row,column));
-            // Set the colour. 
-            if ( squareVisible && !squareExplored ) 
-            {
-                // When explored the colour is brighter
-                color = new Color(Math.min(255, color.getRed()   + 128), 
-                                  Math.min(255, color.getGreen() + 128), 
-                                  Math.min(255, color.getBlue()  + 128));
-            }
-            lblText.setBackground(color);
+            
+//            if ( squareVisible && !squareExplored ) 
+//            {
+//                // When explored the colour is brighter
+//                color = new Color(Math.min(255, color.getRed()   + 128), 
+//                                  Math.min(255, color.getGreen() + 128), 
+//                                  Math.min(255, color.getBlue()  + 128));
+//            }
+//            lblText.setBackground(white);
+            
+            
             // set border colour according to 
             // whether the player is in the grid square or not
             setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);
+            
         }
-        else
-        {
+        else {
             lblText.setText("");
-            lblText.setBackground(null);
-            setBorder(normalBorder);
+            image = null;
         }
+        
+        // if the game is not being played, remove the activeBorder (this fixes the multiple borders glitch)
+        if (game.getState() != GameState.PLAYING) {
+            setBorder(normalBorder);
+        } 
+       
+        // add the imageIcon to the gridsquare panel
+        //lblImage.setIcon((Icon) image); // add the image to the label
+        this.add(lblImage); // add the jlabel image to the current gridsquare
+        
     }
     
     /** This method is called from within the constructor to
