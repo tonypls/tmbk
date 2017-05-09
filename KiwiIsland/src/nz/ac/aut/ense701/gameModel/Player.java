@@ -16,7 +16,6 @@ public class Player
 {
     public Difficulty diff;
     KiwiCountUI kiwiUI;
- //   public double MOVE_STAMINA = 1;//diff.getMOVE_STAMINA();
     
     private Position  position;
     private final String    name;
@@ -39,8 +38,10 @@ public class Player
     public Player(Difficulty diff, Position position, String name, double maxStamina,
                   double maxBackpackWeight, double maxBackpackSize)
     {
+
        //Difficulty easy = new Difficulty();
        this.diff              = diff;
+
        this.position          = position;
        this.name              = name;
        this.maxStamina        = maxStamina;
