@@ -2,6 +2,7 @@ package nz.ac.aut.ense701.main;
 
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gui.KiwiCountUI;
+import nz.ac.aut.ense701.gui.MainMenu;
 
 /**
  * Kiwi Count Project
@@ -21,7 +22,8 @@ public class Main
         // create the game object
         final Game game = new Game();
         // create the GUI for the game
-        final KiwiCountUI  gui  = new KiwiCountUI(game);
+        // final KiwiCountUI gui = new KiwiCountUI (game);
+        final MainMenu  gui  = new MainMenu();
         // make the GUI visible
         java.awt.EventQueue.invokeLater(new Runnable() 
         {

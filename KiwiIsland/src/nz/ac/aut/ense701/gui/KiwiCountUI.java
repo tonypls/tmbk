@@ -22,6 +22,8 @@ public class KiwiCountUI
         extends javax.swing.JFrame
         implements GameEventListener, ActionListener, KeyListener {
    private Game game;
+   
+   
     /**
      * Creates a GUI for the KiwiIsland game.
      *
@@ -629,6 +631,7 @@ public class KiwiCountUI
             }
         });
 
+        Exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
