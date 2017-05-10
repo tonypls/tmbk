@@ -703,6 +703,7 @@ public class KiwiCountUI
             btnCollect.setEnabled(game.canCollect(occ));
             btnCount.setEnabled(game.canCount(occ));
             listObjects.setToolTipText(game.getOccupantDescription(occ));
+            listObjects.setFocusable(false);
         }
     }//GEN-LAST:event_listObjectsValueChanged
 
@@ -716,11 +717,12 @@ public class KiwiCountUI
         if (item != null) {
             btnUse.setEnabled(game.canUse(item));
             listInventory.setToolTipText(game.getOccupantDescription(item));
+            listInventory.setFocusable(false);
         }
     }//GEN-LAST:event_listInventoryValueChanged
 
     private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
-        //game.countKiwi();
+        game.countKiwi();
     }//GEN-LAST:event_btnCountActionPerformed
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
