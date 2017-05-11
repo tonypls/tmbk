@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="DESKTOP-NG34K0M" name="nz.ac.aut.ense701.gameModel.DifficultyTest" skipped="0" tests="5" time="0.054" timestamp="2017-05-10T22:46:20">
+<testsuite errors="0" failures="0" hostname="DESKTOP-NG34K0M" name="nz.ac.aut.ense701.gameModel.DifficultyTest" skipped="0" tests="5" time="0.06" timestamp="2017-05-11T07:13:18">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="AU" />
@@ -58,7 +58,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.DifficultyTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.DifficultyTest.xml crashfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junitvmwatcher5139141953881081588.properties propsfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junit5650223938888967851.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.DifficultyTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.DifficultyTest.xml crashfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junitvmwatcher728240724619180916.properties propsfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junit1974485331426351110.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -404,8 +404,8 @@
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
     <property name="" value="======" />
   </properties>
-  <testcase classname="nz.ac.aut.ense701.gameModel.DifficultyTest" name="testEasy" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.DifficultyTest" name="testHard" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.DifficultyTest" name="testEasy" time="0.002" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.DifficultyTest" name="testHard" time="0.002" />
   <testcase classname="nz.ac.aut.ense701.gameModel.DifficultyTest" name="testGetMOVE_STAMINA" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.DifficultyTest" name="testSetMOVE_STAMINA" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.DifficultyTest" name="testMedium" time="0.0" />
