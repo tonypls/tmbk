@@ -233,6 +233,7 @@ public class KiwiCountUI
         Restart = new javax.swing.JMenuItem();
         Help = new javax.swing.JMenu();
         rules = new javax.swing.JMenuItem();
+        ShortCuts = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kiwi Count");
@@ -598,6 +599,7 @@ public class KiwiCountUI
 
         jMenu1.setText("Select Level");
 
+        Easy.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         Easy.setText("Easy");
         Easy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -606,6 +608,7 @@ public class KiwiCountUI
         });
         jMenu1.add(Easy);
 
+        Medium.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         Medium.setText("Medium");
         Medium.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -614,6 +617,7 @@ public class KiwiCountUI
         });
         jMenu1.add(Medium);
 
+        Hard.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         Hard.setText("Hard");
         Hard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -640,6 +644,7 @@ public class KiwiCountUI
         });
         jMenu2.add(Exit);
 
+        Restart.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         Restart.setText("Restart");
         Restart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -657,6 +662,7 @@ public class KiwiCountUI
             }
         });
 
+        rules.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         rules.setText("Rules/instructions");
         rules.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -664,6 +670,15 @@ public class KiwiCountUI
             }
         });
         Help.add(rules);
+
+        ShortCuts.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F10, java.awt.event.InputEvent.CTRL_MASK));
+        ShortCuts.setText("ShortCuts");
+        ShortCuts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShortCutsActionPerformed(evt);
+            }
+        });
+        Help.add(ShortCuts);
 
         jMenuBar1.add(Help);
 
@@ -820,6 +835,23 @@ public class KiwiCountUI
                 JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_rulesActionPerformed
 
+    private void ShortCutsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShortCutsActionPerformed
+
+                JOptionPane.showMessageDialog(this,"These Are Shortcuts which lets you play the "
+                                                + "game at a faster rate\n"
+                                                + "FOR CHOOSING LEVELS:\n"
+                                                + "Easy: Ctrl + Alt + E\n"
+                                                + "Medium: Ctrl + Alt + M\n"
+                                                + "Hard: Ctrl + Alt + H\n"
+                                                + "FOR HELP/INFORMATION ON GAME:\n"
+                                                + "Information: Ctrl + Alt + i\n"
+                                                + "ShortCuts: Ctrl + F10\n"
+                                                + "Restart: Ctrl + Alt + R\n"
+                                                + "Quit: Ctrl + Alt + q\n","ShortCuts",
+                                                    
+                                                   JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_ShortCutsActionPerformed
+
     /**
      * Creates and initialises the island grid.
      */
@@ -846,6 +878,7 @@ public class KiwiCountUI
     private javax.swing.JMenu Help;
     private javax.swing.JMenuItem Medium;
     private javax.swing.JMenuItem Restart;
+    private javax.swing.JMenuItem ShortCuts;
     private javax.swing.JButton btnCollect;
     private javax.swing.JButton btnCount;
     private javax.swing.JButton btnDrop;
