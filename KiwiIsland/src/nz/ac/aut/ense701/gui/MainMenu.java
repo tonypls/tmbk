@@ -32,73 +32,62 @@ public class MainMenu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         Instructions = new javax.swing.JButton();
         exit = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Kiwi Island");
+        setMinimumSize(new java.awt.Dimension(960, 540));
+        setResizable(false);
+        setSize(new java.awt.Dimension(960, 540));
+        getContentPane().setLayout(null);
 
-        jButton1.setText("Play Game");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/play!.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setIconTextGap(0);
+        jButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/play_hover.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(430, 130, 95, 61);
 
-        Instructions.setText("Instructions");
+        Instructions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/instructions.png"))); // NOI18N
+        Instructions.setBorder(null);
+        Instructions.setBorderPainted(false);
+        Instructions.setContentAreaFilled(false);
+        Instructions.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/instructions_hover.png"))); // NOI18N
         Instructions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InstructionsActionPerformed(evt);
             }
         });
+        getContentPane().add(Instructions);
+        Instructions.setBounds(390, 230, 190, 70);
 
-        exit.setText("Quit Game");
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/quit.png"))); // NOI18N
+        exit.setBorder(null);
+        exit.setBorderPainted(false);
+        exit.setContentAreaFilled(false);
+        exit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/quit_hover.png"))); // NOI18N
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
             }
         });
+        getContentPane().add(exit);
+        exit.setBounds(410, 350, 140, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/bush.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Kiwi Island");
-        jLabel2.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0))));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(Instructions, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(Instructions, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel2))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/menu_background.png"))); // NOI18N
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, -20, 960, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,7 +162,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Instructions;
     private javax.swing.JButton exit;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
