@@ -5,6 +5,8 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import nz.ac.aut.ense701.gameModel.Game;
 
@@ -21,6 +23,11 @@ public class ChoosingLevels extends javax.swing.JFrame {
      * Creates new form ChoosingLevels
      */
     public ChoosingLevels() {
+        // set the location of the created levelGUI to center of the window
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = kit.getScreenSize();
+        games.setLocation(screenSize.width/2 - games.getWidth()/2, screenSize.height/2 - games.getHeight()/2);
+        
         initComponents();
     }
 
@@ -33,95 +40,86 @@ public class ChoosingLevels extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         Easy = new javax.swing.JButton();
-        Medium = new javax.swing.JButton();
         Hard = new javax.swing.JButton();
+        Medium = new javax.swing.JButton();
         Quit = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(960, 540));
+        setResizable(false);
+        setSize(new java.awt.Dimension(960, 540));
+        getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Choose A level");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-        Easy.setText("Easy");
-        Easy.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        Easy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/easy.png"))); // NOI18N
+        Easy.setBorder(null);
+        Easy.setBorderPainted(false);
+        Easy.setContentAreaFilled(false);
+        Easy.setFocusPainted(false);
+        Easy.setFocusable(false);
+        Easy.setMargin(null);
+        Easy.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/easy_hover.png"))); // NOI18N
         Easy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EasyActionPerformed(evt);
             }
         });
+        getContentPane().add(Easy);
+        Easy.setBounds(430, 120, 93, 64);
 
-        Medium.setText("Medium");
-        Medium.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
-        Medium.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MediumActionPerformed(evt);
-            }
-        });
-
-        Hard.setText("Hard");
-        Hard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        Hard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/hard.png"))); // NOI18N
+        Hard.setBorder(null);
+        Hard.setBorderPainted(false);
+        Hard.setContentAreaFilled(false);
+        Hard.setFocusable(false);
+        Hard.setIconTextGap(0);
+        Hard.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Hard.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/hard_hover.png"))); // NOI18N
         Hard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HardActionPerformed(evt);
             }
         });
+        getContentPane().add(Hard);
+        Hard.setBounds(430, 340, 103, 57);
 
-        Quit.setText("Quit");
+        Medium.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/medium.png"))); // NOI18N
+        Medium.setBorder(null);
+        Medium.setBorderPainted(false);
+        Medium.setContentAreaFilled(false);
+        Medium.setFocusable(false);
+        Medium.setIconTextGap(0);
+        Medium.setMargin(null);
+        Medium.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/medium_hover.png"))); // NOI18N
+        Medium.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MediumActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Medium);
+        Medium.setBounds(390, 230, 185, 57);
+
+        Quit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/quit.png"))); // NOI18N
         Quit.setToolTipText("");
-        Quit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        Quit.setBorder(null);
+        Quit.setBorderPainted(false);
+        Quit.setContentAreaFilled(false);
+        Quit.setFocusable(false);
+        Quit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/quit_hover.png"))); // NOI18N
         Quit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QuitActionPerformed(evt);
             }
         });
+        getContentPane().add(Quit);
+        Quit.setBounds(830, 420, 110, 60);
 
-        jLabel2.setBackground(new java.awt.Color(0, 51, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/bush.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(Medium, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(570, 570, 570)
-                .addComponent(Quit, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(Easy, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(550, 550, 550)
-                .addComponent(Hard, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(Medium, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addComponent(Quit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(Easy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(Hard, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/difficulty_select_bg.png"))); // NOI18N
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, -10, 960, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -144,9 +142,9 @@ public class ChoosingLevels extends javax.swing.JFrame {
     }//GEN-LAST:event_QuitActionPerformed
 
     private void HardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HardActionPerformed
-       games.setVisible(true);
-       game.diff.hard();
-       dispose();
+        games.setVisible(true);
+        game.diff.hard();
+        dispose();
     }//GEN-LAST:event_HardActionPerformed
 
     /**
@@ -190,6 +188,5 @@ public class ChoosingLevels extends javax.swing.JFrame {
     private javax.swing.JButton Medium;
     private javax.swing.JButton Quit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

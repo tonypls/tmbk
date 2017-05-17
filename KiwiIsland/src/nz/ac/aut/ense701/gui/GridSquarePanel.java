@@ -2,21 +2,16 @@ package nz.ac.aut.ense701.gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import nz.ac.aut.ense701.gameModel.Game;
-import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.Terrain;
 
 /*
@@ -99,22 +94,7 @@ public class GridSquarePanel extends javax.swing.JPanel
         if ( squareExplored || squareVisible )
         {
             // Set the text of the JLabel according to the occupant
-            lblText.setText(game.getOccupantStringRepresentation(row,column));
-            
-//            if ( squareVisible && !squareExplored ) 
-//            {
-//                // When explored the colour is brighter
-//                color = new Color(Math.min(255, color.getRed()   + 128), 
-//                                  Math.min(255, color.getGreen() + 128), 
-//                                  Math.min(255, color.getBlue()  + 128));
-//            }
-//            lblText.setBackground(white);
-            
-            
-            // set border colour according to 
-            // whether the player is in the grid square or not
-            setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);
-            
+            lblText.setText(game.getOccupantStringRepresentation(row,column));           
         }
         else {
             lblText.setText("");
@@ -122,10 +102,13 @@ public class GridSquarePanel extends javax.swing.JPanel
         }
         
         // if the game is not being played, remove the activeBorder (this fixes the multiple borders glitch)
-        if (game.getState() != GameState.PLAYING) {
-            setBorder(normalBorder);
-        } 
+//        if (game.getState() != GameState.PLAYING) {
+//            setBorder(normalBorder);
+//        } 
        
+        // set the redsquare border to active if the player is here
+        setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);
+
         // add the imageIcon to the gridsquare panel
         //lblImage.setIcon((Icon) image); // add the image to the label
         this.add(lblImage); // add the jlabel image to the current gridsquare

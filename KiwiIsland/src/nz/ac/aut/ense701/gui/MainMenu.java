@@ -5,6 +5,8 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,79 +34,77 @@ public class MainMenu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         Instructions = new javax.swing.JButton();
         exit = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Kiwi Island");
+        setMinimumSize(new java.awt.Dimension(960, 540));
+        setResizable(false);
+        setSize(new java.awt.Dimension(960, 540));
+        getContentPane().setLayout(null);
 
-        jButton1.setText("Play Game");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/play!.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setFocusable(false);
+        jButton1.setIconTextGap(0);
+        jButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/play_hover.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(430, 130, 95, 61);
 
-        Instructions.setText("Instructions");
+        Instructions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/instructions.png"))); // NOI18N
+        Instructions.setBorder(null);
+        Instructions.setBorderPainted(false);
+        Instructions.setContentAreaFilled(false);
+        Instructions.setFocusable(false);
+        Instructions.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/instructions_hover.png"))); // NOI18N
         Instructions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InstructionsActionPerformed(evt);
             }
         });
+        getContentPane().add(Instructions);
+        Instructions.setBounds(390, 230, 190, 70);
 
-        exit.setText("Quit Game");
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/quit.png"))); // NOI18N
+        exit.setBorder(null);
+        exit.setBorderPainted(false);
+        exit.setContentAreaFilled(false);
+        exit.setFocusable(false);
+        exit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/quit_hover.png"))); // NOI18N
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
             }
         });
+        getContentPane().add(exit);
+        exit.setBounds(410, 350, 140, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/bush.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Kiwi Island");
-        jLabel2.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0))));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(Instructions, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(Instructions, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel2))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/menu_background.png"))); // NOI18N
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, -20, 960, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new ChoosingLevels().setVisible(true);
+        ChoosingLevels levelGUI = new ChoosingLevels(); // create gui object
+        Toolkit kit = Toolkit.getDefaultToolkit(); // get toolkit to get windowsize
+        Dimension screenSize = kit.getScreenSize();
+        // set the location of the created levelGUI to center of the window
+        levelGUI.setLocation(screenSize.width/2 - levelGUI.getWidth()/2, screenSize.height/2 - levelGUI.getHeight()/2);
+        levelGUI.setVisible(true);
+        
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -113,24 +113,23 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void InstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InstructionsActionPerformed
-         JOptionPane.showMessageDialog(
-                this, "Instructions:\n"
-                + "Your Goal is to count each kiwi in the game and trap predators.\n"
-                + "Each square can contain either a predator(to trap), a kiwi(to count)\n"
+        JOptionPane.showMessageDialog(
+                this, "How to play:\n"
+                + "\nYour goal is to count each kiwi in the game and trap all predators.\n"
+                + "Each square can contain either a predator (to trap), a kiwi (to count)\n"
                 + "or an item(to collect/use, set or fix).\n"
                 + "\n"
-                + "Use the arrow keys or press the NSEW buttons to move around the island.\n"
+                + "Use the arrow keys, ASDW or press the NSEW buttons to move around the island.\n"
                 + "Each move uses stamina, the amount of stamina used each move depends\n"
-                + "on the terrain you have moved too."
-                + "If you run out of stamina or are severely \ninjured, you will loose the\n"
-                + "the game."
+                + "on the terrain you have moved too.\n"
+                + "\nIf you run out of stamina or are severely injured, you will lose the game."
                 + "\n"
-                + "The game is completed once you have counted all the kiwis and trapped\n"
-                + "all the predators.\n"
+                + "There are a number of hazards on the island, so take care!\n"
                 + "\n"
                 + "The goal of the game is to raise awareness of the conservation\n"
-                + "of kiwis.",
-                "Help",
+                + "of kiwis.\n"
+                + "\nkiwisforkiwi.org",
+                "Instructions",
                 JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_InstructionsActionPerformed
 
@@ -173,7 +172,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Instructions;
     private javax.swing.JButton exit;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

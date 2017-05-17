@@ -57,20 +57,20 @@ public class KiwiCountUI
             if((game.getPlayer().getStaminaLevel()<75.0)&&game.getPlayer().getStaminaLevel()>73.0){
               JOptionPane.showMessageDialog(
                     this,"Hint:\n"
-                    + "Your Stamina is getting Low!",
+                    + "Your stamina is getting lower!",
                      "Easy Level", 
                     JOptionPane.INFORMATION_MESSAGE);  
         }else if((game.getPlayer().getStaminaLevel()<50.0)&&game.getPlayer().getStaminaLevel()>48.0){
               JOptionPane.showMessageDialog(  
                     this,"Hint:\n"
-                     +"Your Stamina is Low, Please feed yourself!",
+                     +"Your stamina is low, please feed yourself!",
                      "Easy Level",
                     JOptionPane.INFORMATION_MESSAGE); 
         }else if((game.getPlayer().getStaminaLevel()<20.0)&&game.getPlayer().getStaminaLevel()>18.0){
               JOptionPane.showMessageDialog(  
                     this,"Hint:\n"
-                     +"Your Stamina is very Low, Please feed yourself!\n"
-                     +"You need to use collected itmes to increase your stamina.",
+                     +"Your stamina is very low, please feed yourself!\n"
+                     +"You need to use collected items to increase your stamina.",
                      "Easy Level",
                     JOptionPane.INFORMATION_MESSAGE); 
         }
@@ -82,8 +82,8 @@ public class KiwiCountUI
             if((game.getPlayer().getStaminaLevel()<20.0)&&game.getPlayer().getStaminaLevel()>18.0){
               JOptionPane.showMessageDialog(  
                     this,"Hint:\n"
-                     +"Your Stamina is very Low, Please feed yourself!\n"
-                     +"You need to use collected itmes to increase your stamina.",
+                     +"Your stamina is very low, please feed yourself!\n"
+                     +"You need to use collected items to increase your stamina.",
                      "Hard Level",
                     JOptionPane.INFORMATION_MESSAGE); 
         }
@@ -94,14 +94,14 @@ public class KiwiCountUI
             if((game.getPlayer().getStaminaLevel()<50.0)&&game.getPlayer().getStaminaLevel()>48.0){
               JOptionPane.showMessageDialog(  
                     this,"Hint:\n"
-                     +"Your Stamina is Low, Please feed yourself!",
+                     +"Your stamina is low, please feed yourself!",
                      "Medium Level",
                     JOptionPane.INFORMATION_MESSAGE); 
         }else if((game.getPlayer().getStaminaLevel()<20.0)&&game.getPlayer().getStaminaLevel()>18.0){
               JOptionPane.showMessageDialog(  
                     this,"Hint:\n"
-                     +"Your Stamina is very Low, Please feed yourself!\n"
-                     +"You need to use collected itmes to increase your stamina.",
+                     +"Your stamina is very low, please feed yourself!\n"
+                     +"You need to use collected items to increase your stamina.",
                      "Medium Level",
                     JOptionPane.INFORMATION_MESSAGE); 
         }
@@ -235,7 +235,8 @@ public class KiwiCountUI
         rules = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Kiwi Count");
+        setTitle("Kiwi Island");
+        setResizable(false);
 
         pnlContent.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         pnlContent.setLayout(new java.awt.BorderLayout(10, 0));
@@ -730,7 +731,7 @@ public class KiwiCountUI
         JOptionPane.showMessageDialog(
                 this,
 
-                "You have selected Easy Level!\n          Press OK to start!", "New Game",
+                "You have selected EASY difficulty!\n          Press OK to start!", "New Game",
 
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();
@@ -768,7 +769,7 @@ public class KiwiCountUI
         JOptionPane.showMessageDialog(
                 this,
 
-                 "You have selected Hard Level!\n          Press OK to start!", "New Game",
+                 "You have selected HARD difficulty!\n          Press OK to start!", "New Game",
 
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();// Restarting game after message popups.
@@ -784,7 +785,7 @@ public class KiwiCountUI
         JOptionPane.showMessageDialog(
                 this,
 
-                "You have selected Medium Level!\n          Press OK to start!", "New Game",
+                "You have selected MEDIUM difficulty!\n          Press OK to start!", "New Game",
 
                 JOptionPane.INFORMATION_MESSAGE);
         game.createNewGame();// Restarting game after message popups.
@@ -800,23 +801,22 @@ public class KiwiCountUI
         //When user click on "instructions" button, it pop-ups the
         //dialogue box witout instructions and rules
         JOptionPane.showMessageDialog(
-                this, "Instructions:\n"
-                + "Your Goal is to count each kiwi in the game and trap predators.\n"
-                + "Each square can contain either a predator(to trap), a kiwi(to count)\n"
+                this, "How to play:\n"
+                + "\nYour goal is to count each kiwi in the game and trap all predators.\n"
+                + "Each square can contain either a predator (to trap), a kiwi (to count)\n"
                 + "or an item(to collect/use, set or fix).\n"
                 + "\n"
-                + "Use the arrow keys or press the NSEW buttons to move around the island.\n"
+                + "Use the arrow keys, ASDW or press the NSEW buttons to move around the island.\n"
                 + "Each move uses stamina, the amount of stamina used each move depends\n"
-                + "on the terrain you have moved too."
-                + "If you run out of stamina or are severely \ninjured, you will loose the\n"
-                + "the game."
+                + "on the terrain you have moved too.\n"
+                + "\nIf you run out of stamina or are severely injured, you will lose the game."
                 + "\n"
-                + "The game is completed once you have counted all the kiwis and trapped\n"
-                + "all the predators.\n"
+                + "There are a number of hazards on the island, so take care!\n"
                 + "\n"
                 + "The goal of the game is to raise awareness of the conservation\n"
-                + "of kiwis.",
-                "Help",
+                + "of kiwis.\n"
+                + "\nkiwisforkiwi.org",
+                "Instructions",
                 JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_rulesActionPerformed
 
