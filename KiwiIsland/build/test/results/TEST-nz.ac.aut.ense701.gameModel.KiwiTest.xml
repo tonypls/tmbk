@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="BensComputer" name="nz.ac.aut.ense701.gameModel.KiwiTest" skipped="0" tests="3" time="0.486" timestamp="2017-05-16T09:00:57">
+<testsuite errors="0" failures="0" hostname="BensComputer" name="nz.ac.aut.ense701.gameModel.KiwiTest" skipped="0" tests="3" time="0.126" timestamp="2017-05-16T23:58:57">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="Ben Smith" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.KiwiTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.KiwiTest.xml crashfile=C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\junitvmwatcher6861520476492770942.properties propsfile=C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\junit7703221133850777513.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.KiwiTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.KiwiTest.xml crashfile=C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\junitvmwatcher6037608474890245102.properties propsfile=C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\junit6917525673174091332.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -317,8 +317,8 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="" value="======" />
   </properties>
-  <testcase classname="nz.ac.aut.ense701.gameModel.KiwiTest" name="testCountedIsCounted" time="0.011" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.KiwiTest" name="testGetStringRepresentation" time="0.001" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.KiwiTest" name="testCountedIsCounted" time="0.007" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.KiwiTest" name="testGetStringRepresentation" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.KiwiTest" name="testCountedNotCounted" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

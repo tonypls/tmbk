@@ -5,6 +5,8 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,6 +47,7 @@ public class MainMenu extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
+        jButton1.setFocusable(false);
         jButton1.setIconTextGap(0);
         jButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/play_hover.png"))); // NOI18N
@@ -60,6 +63,7 @@ public class MainMenu extends javax.swing.JFrame {
         Instructions.setBorder(null);
         Instructions.setBorderPainted(false);
         Instructions.setContentAreaFilled(false);
+        Instructions.setFocusable(false);
         Instructions.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/instructions_hover.png"))); // NOI18N
         Instructions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +77,7 @@ public class MainMenu extends javax.swing.JFrame {
         exit.setBorder(null);
         exit.setBorderPainted(false);
         exit.setContentAreaFilled(false);
+        exit.setFocusable(false);
         exit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/quit_hover.png"))); // NOI18N
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +98,13 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new ChoosingLevels().setVisible(true);
+        ChoosingLevels levelGUI = new ChoosingLevels(); // create gui object
+        Toolkit kit = Toolkit.getDefaultToolkit(); // get toolkit to get windowsize
+        Dimension screenSize = kit.getScreenSize();
+        // set the location of the created levelGUI to center of the window
+        levelGUI.setLocation(screenSize.width/2 - levelGUI.getWidth()/2, screenSize.height/2 - levelGUI.getHeight()/2);
+        levelGUI.setVisible(true);
+        
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -102,24 +113,23 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void InstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InstructionsActionPerformed
-         JOptionPane.showMessageDialog(
-                this, "Instructions:\n"
-                + "Your Goal is to count each kiwi in the game and trap predators.\n"
-                + "Each square can contain either a predator(to trap), a kiwi(to count)\n"
+        JOptionPane.showMessageDialog(
+                this, "How to play:\n"
+                + "\nYour goal is to count each kiwi in the game and trap all predators.\n"
+                + "Each square can contain either a predator (to trap), a kiwi (to count)\n"
                 + "or an item(to collect/use, set or fix).\n"
                 + "\n"
-                + "Use the arrow keys or press the NSEW buttons to move around the island.\n"
+                + "Use the arrow keys, ASDW or press the NSEW buttons to move around the island.\n"
                 + "Each move uses stamina, the amount of stamina used each move depends\n"
-                + "on the terrain you have moved too."
-                + "If you run out of stamina or are severely \ninjured, you will loose the\n"
-                + "the game."
+                + "on the terrain you have moved too.\n"
+                + "\nIf you run out of stamina or are severely injured, you will lose the game."
                 + "\n"
-                + "The game is completed once you have counted all the kiwis and trapped\n"
-                + "all the predators.\n"
+                + "There are a number of hazards on the island, so take care!\n"
                 + "\n"
                 + "The goal of the game is to raise awareness of the conservation\n"
-                + "of kiwis.",
-                "Help",
+                + "of kiwis.\n"
+                + "\nkiwisforkiwi.org",
+                "Instructions",
                 JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_InstructionsActionPerformed
 

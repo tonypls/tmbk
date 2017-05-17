@@ -5,6 +5,8 @@
  */
 package nz.ac.aut.ense701.gui;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import nz.ac.aut.ense701.gameModel.Game;
 
@@ -21,6 +23,11 @@ public class ChoosingLevels extends javax.swing.JFrame {
      * Creates new form ChoosingLevels
      */
     public ChoosingLevels() {
+        // set the location of the created levelGUI to center of the window
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = kit.getScreenSize();
+        games.setLocation(screenSize.width/2 - games.getWidth()/2, screenSize.height/2 - games.getHeight()/2);
+        
         initComponents();
     }
 
@@ -50,6 +57,7 @@ public class ChoosingLevels extends javax.swing.JFrame {
         Easy.setBorderPainted(false);
         Easy.setContentAreaFilled(false);
         Easy.setFocusPainted(false);
+        Easy.setFocusable(false);
         Easy.setMargin(null);
         Easy.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/easy_hover.png"))); // NOI18N
         Easy.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +72,7 @@ public class ChoosingLevels extends javax.swing.JFrame {
         Hard.setBorder(null);
         Hard.setBorderPainted(false);
         Hard.setContentAreaFilled(false);
+        Hard.setFocusable(false);
         Hard.setIconTextGap(0);
         Hard.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Hard.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/hard_hover.png"))); // NOI18N
@@ -79,6 +88,7 @@ public class ChoosingLevels extends javax.swing.JFrame {
         Medium.setBorder(null);
         Medium.setBorderPainted(false);
         Medium.setContentAreaFilled(false);
+        Medium.setFocusable(false);
         Medium.setIconTextGap(0);
         Medium.setMargin(null);
         Medium.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/medium_hover.png"))); // NOI18N
@@ -95,6 +105,7 @@ public class ChoosingLevels extends javax.swing.JFrame {
         Quit.setBorder(null);
         Quit.setBorderPainted(false);
         Quit.setContentAreaFilled(false);
+        Quit.setFocusable(false);
         Quit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/nz/ac/aut/ense701/gui/quit_hover.png"))); // NOI18N
         Quit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="BensComputer" name="nz.ac.aut.ense701.gameModel.HazardTest" skipped="0" tests="8" time="0.496" timestamp="2017-05-16T09:00:53">
+<testsuite errors="0" failures="0" hostname="BensComputer" name="nz.ac.aut.ense701.gameModel.HazardTest" skipped="0" tests="8" time="0.128" timestamp="2017-05-16T23:58:56">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="Ben Smith" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.HazardTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.HazardTest.xml crashfile=C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\junitvmwatcher4863848769035218391.properties propsfile=C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\junit9160534149988859283.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.HazardTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.HazardTest.xml crashfile=C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\junitvmwatcher9048892447049197852.properties propsfile=C:\Users\Ben Smith\Documents\tmbk_update\tmbk\KiwiIsland\build\junit7899280701431268931.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -317,14 +317,14 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="" value="======" />
   </properties>
-  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetPosition" time="0.023" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testIsBreakTrap" time="0.011" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetName" time="0.001" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetPosition" time="0.008" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testIsBreakTrap" time="0.008" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetName" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetStringRepresentationDangerous" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetDescription" time="0.001" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetImpact" time="0.001" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testIsFatal" time="0.002" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testSetPosition" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetDescription" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testGetImpact" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testIsFatal" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.HazardTest" name="testSetPosition" time="0.004" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
