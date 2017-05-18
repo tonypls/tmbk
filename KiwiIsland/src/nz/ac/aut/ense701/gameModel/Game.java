@@ -5,11 +5,19 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Set;
 import nz.ac.aut.ense701.gui.KiwiCountUI;
+import java.util.Random;
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
+
 
 /**
  * This is the class that knows the Kiwi Island game rules and state
@@ -806,15 +814,29 @@ public class Game
      */
     private void setUpOccupants(Scanner input) 
     {
+           Random randomGenerator = new Random();
+ 
         int numItems = input.nextInt();
+   //             ArrayList posArray = new ArrayList();
+  //      ArrayList<Position> posArray = new ArrayList<Position>();
+          List<Integer> posArray =  new ArrayList<>(); 
         for ( int i = 0 ; i < numItems ; i++ ) 
         {
+            
+            int randomInt = randomGenerator.nextInt(10);
+            int randomInt2 = randomGenerator.nextInt(10);
             String occType  = input.next();
             String occName  = input.next(); 
             String occDesc  = input.next();
-            int    occRow   = input.nextInt();
-            int    occCol   = input.nextInt();
+            int    occRow   = randomInt;
+            input.next(); 
+            int    occCol   = randomInt2;
+            input.next();
+            int posi = occRow * 1000 + occCol; //Because I only wanted to make 1 array and didn't want to use strings I've used this equation to store the position as an in with room to make the map 1000 squares big if required
+         
             Position occPos = new Position(island, occRow, occCol);
+            posArray.add(posi); 
+            
             Occupant occupant    = null;
 
             if ( occType.equals("T") )
@@ -832,7 +854,20 @@ public class Game
             }
             else if ( occType.equals("H") )
             {
-                double impact = input.nextDouble();
+                   occRow    = randomGenerator.nextInt(10);
+                   occCol   = randomGenerator.nextInt(10);
+                   posi = occRow * 1000 + occCol;
+                   occPos = new Position(island, occRow, occCol);
+                   double impact = input.nextDouble();
+                   System.out.println(""+posArray);
+             
+                while(posArray.contains(posi)|| posi == 3){
+                   occRow  = randomGenerator.nextInt(10);
+                   occCol  = randomGenerator.nextInt(10);
+                    posi = occRow * 1000 + occCol; 
+                  System.out.println("bad");
+                   occPos = new Position(island, occRow, occCol);
+                }
                 occupant = new Hazard(occPos, occName, occDesc,impact);
             }
             else if ( occType.equals("K") )
