@@ -16,6 +16,8 @@ import java.util.Set;
 import nz.ac.aut.ense701.gui.KiwiCountUI;
 import java.util.Random;
 import java.util.function.IntPredicate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
 
@@ -39,7 +41,7 @@ public class Game
     public static final int MAXSIZE_INDEX = 4;
     public static final int SIZE_INDEX = 5;
     public Difficulty diff = new Difficulty(); 
-    
+    public String[][] posArray;
     /**
      * A new instance of Kiwi island that reads data from "IslandData.txt".
      */
@@ -70,6 +72,24 @@ public class Game
         loseMessage = "";
         playerMessage = "";
         notifyGameEventListeners();
+       
+        
+    }
+        public void createTestGame()
+    {
+        
+        totalPredators = 0;
+        totalKiwis = 0;
+        predatorsTrapped = 0;
+        kiwiCount = 0;
+        initialiseIslandFromFileForTest("IslandData.txt") ;
+        drawIsland();
+        state = GameState.PLAYING;
+        winMessage = "";
+        loseMessage = "";
+        playerMessage = "";
+        notifyGameEventListeners();
+       
         
     }
     
@@ -754,7 +774,40 @@ public class Game
 
             // read and setup the occupants
             setUpOccupants(input);
+         
+            input.close();
+        }
+        catch(FileNotFoundException e)
+        {
+            System.err.println("Unable to find data file '" + fileName + "'");
+        }
+        catch(IOException e)
+        {
+            System.err.println("Problem encountered processing file.");
+        }
+    } private void initialiseIslandFromFileForTest(String fileName) 
+    {
+        try
+        {
+            Scanner input = new Scanner(new File(fileName));
+            // make sure decimal numbers are read in the form "123.23"
+            input.useLocale(Locale.US);
+            input.useDelimiter("\\s*,\\s*");
 
+            // create the island
+            int numRows    = input.nextInt();
+            int numColumns = input.nextInt();
+            island = new Island(numRows, numColumns);
+
+            // read and setup the terrain
+            setUpTerrain(input);
+
+            // read and setup the player
+            setUpPlayer(input);
+
+            // read and setup the occupants
+            setUpOccupantsForTest(input);
+         
             input.close();
         }
         catch(FileNotFoundException e)
@@ -812,31 +865,17 @@ public class Game
      * Creates occupants listed in the file and adds them to the island.
      * @param input data from the level file
      */
-    private void setUpOccupants(Scanner input) 
+   private void setUpOccupantsForTest(Scanner input) 
     {
-           Random randomGenerator = new Random();
- 
         int numItems = input.nextInt();
-   //             ArrayList posArray = new ArrayList();
-  //      ArrayList<Position> posArray = new ArrayList<Position>();
-          List<Integer> posArray =  new ArrayList<>(); 
         for ( int i = 0 ; i < numItems ; i++ ) 
         {
-            
-            int randomInt = randomGenerator.nextInt(10);
-            int randomInt2 = randomGenerator.nextInt(10);
             String occType  = input.next();
             String occName  = input.next(); 
             String occDesc  = input.next();
-            int    occRow   = randomInt;
-            input.next(); 
-            int    occCol   = randomInt2;
-            input.next();
-            int posi = occRow * 1000 + occCol; //Because I only wanted to make 1 array and didn't want to use strings I've used this equation to store the position as an in with room to make the map 1000 squares big if required
-         
+            int    occRow   = input.nextInt();
+            int    occCol   = input.nextInt();
             Position occPos = new Position(island, occRow, occCol);
-            posArray.add(posi); 
-            
             Occupant occupant    = null;
 
             if ( occType.equals("T") )
@@ -854,20 +893,7 @@ public class Game
             }
             else if ( occType.equals("H") )
             {
-                   occRow    = randomGenerator.nextInt(10);
-                   occCol   = randomGenerator.nextInt(10);
-                   posi = occRow * 1000 + occCol;
-                   occPos = new Position(island, occRow, occCol);
-                   double impact = input.nextDouble();
-                   System.out.println(""+posArray);
-             
-                while(posArray.contains(posi)|| posi == 3){
-                   occRow  = randomGenerator.nextInt(10);
-                   occCol  = randomGenerator.nextInt(10);
-                    posi = occRow * 1000 + occCol; 
-                  System.out.println("bad");
-                   occPos = new Position(island, occRow, occCol);
-                }
+                double impact = input.nextDouble();
                 occupant = new Hazard(occPos, occName, occDesc,impact);
             }
             else if ( occType.equals("K") )
@@ -885,6 +911,82 @@ public class Game
                 occupant = new Fauna(occPos, occName, occDesc);
             }
             if ( occupant != null ) island.addOccupant(occPos, occupant);
+        }
+       
+    }         
+    
+    private void setUpOccupants(Scanner input) 
+    {
+        Random randomGenerator = new Random();
+        posArray = new String[island.getNumRows()][island.getNumColumns()];//Create an array to represent the map full of false(empty booleans
+        int numItems = input.nextInt();
+        boolean alreadyExecuted = false;
+        
+        for ( int i = 0 ; i < numItems ; i++ ) 
+        {
+            
+            int randomInt = randomGenerator.nextInt(10);
+            int randomInt2 = randomGenerator.nextInt(10);
+            String occType  = input.next();
+            String occName  = input.next(); 
+            String occDesc  = input.next();
+            int    occRow   = randomInt;
+            input.next(); 
+            int    occCol   = randomInt2;
+            input.next();
+           
+            Position occPos = new Position(island, occRow, occCol);            
+            Occupant occupant    = null;
+
+            if ( occType.equals("T") )
+            {
+                double weight = input.nextDouble();
+                double size   = input.nextDouble();
+                occupant = new Tool(occPos, occName, occDesc, weight, size);
+            }
+            else if ( occType.equals("E") )
+            {
+                double weight = input.nextDouble();
+                double size   = input.nextDouble();
+                double energy = input.nextDouble();
+                occupant = new Food(occPos, occName, occDesc, weight, size, energy);
+            }
+            else if ( occType.equals("H") )
+            {
+                   occRow   = randomGenerator.nextInt(10);
+                   occCol   = randomGenerator.nextInt(10);
+                   occPos = new Position(island, occRow, occCol);
+                   double impact = input.nextDouble();
+             while(posArray[occRow][occCol]!=null || occRow==0 && occCol==2){//Makes sure there is not occupant or the starting character at the location where a hazard is placed
+                   occRow  = randomGenerator.nextInt(10);
+                   occCol  = randomGenerator.nextInt(10);
+                 //System.out.println("bad");
+                   occPos = new Position(island, occRow, occCol);
+                }
+                posArray[occRow][occCol]=occType;
+                occupant = new Hazard(occPos, occName, occDesc,impact);
+            }
+            else if ( occType.equals("K") )
+            {
+               
+                if(!alreadyExecuted) {
+                occPos = new Position(island, 0, 7); 
+                alreadyExecuted = true;
+                }
+                occupant = new Kiwi(occPos, occName, occDesc);
+                totalKiwis++;
+            }
+            else if ( occType.equals("P") )
+            {
+                occupant = new Predator(occPos, occName, occDesc);
+                totalPredators++;
+            }
+            else if ( occType.equals("F") )
+            {
+                occupant = new Fauna(occPos, occName, occDesc);
+            }
+            if ( occupant != null ) island.addOccupant(occPos, occupant);
+             posArray[occRow][occCol] = occType; //Mark used terrain with true
         }
        
     }    
