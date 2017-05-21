@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import java.awt.event.*;
+import javax.swing.ImageIcon;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
@@ -109,17 +110,14 @@ public class KiwiCountUI
             
         // check for "game over" or "game won"
         if (game.getState() == GameState.LOST) {
-            JOptionPane.showMessageDialog(
-                    this,
-                    game.getLoseMessage(), "Game over!",
-                    JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,"", game.getLoseMessage(),JOptionPane.INFORMATION_MESSAGE,new ImageIcon("Images/gameover.png"));
             game.createNewGame();
+            
         } else if (game.getState() == GameState.WON) {
-            JOptionPane.showMessageDialog(
-                    this,
-                    game.getWinMessage(), "Well Done!",
-                    JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,"", game.getLoseMessage(),JOptionPane.INFORMATION_MESSAGE,new ImageIcon("Images/gamewon.png"));
+            //JOptionPane.showMessageDialog(this,game.getWinMessage(), "Well Done!",JOptionPane.INFORMATION_MESSAGE);
             game.createNewGame();
+            
         } else if (game.messageForPlayer()) {
             JOptionPane.showMessageDialog(
                     this,
