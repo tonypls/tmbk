@@ -125,7 +125,7 @@ public class ChoosingLevels extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
-             
+     
        games.setVisible(true);
        game.diff.easy();
        dispose();
@@ -145,6 +145,8 @@ public class ChoosingLevels extends javax.swing.JFrame {
         games.setVisible(true);
         game.diff.hard();
         dispose();
+        
+        
     }//GEN-LAST:event_HardActionPerformed
 
     /**

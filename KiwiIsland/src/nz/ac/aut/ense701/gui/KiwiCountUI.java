@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import java.awt.event.*;
+import javax.swing.JButton;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
@@ -195,19 +196,21 @@ public class KiwiCountUI
         pnlIsland = new javax.swing.JPanel();
         javax.swing.JPanel pnlControls = new javax.swing.JPanel();
         javax.swing.JPanel pnlPlayer = new javax.swing.JPanel();
-        javax.swing.JPanel pnlPlayerData = new javax.swing.JPanel();
-        javax.swing.JLabel lblPlayerName = new javax.swing.JLabel();
+        pnlPlayerData = new javax.swing.JPanel();
+        lblPlayerName = new javax.swing.JLabel();
         txtPlayerName = new javax.swing.JLabel();
-        javax.swing.JLabel lblPlayerStamina = new javax.swing.JLabel();
+        lblPlayerStamina = new javax.swing.JLabel();
         progPlayerStamina = new javax.swing.JProgressBar();
-        javax.swing.JLabel lblBackpackWeight = new javax.swing.JLabel();
+        lblBackpackWeight = new javax.swing.JLabel();
         progBackpackWeight = new javax.swing.JProgressBar();
-        javax.swing.JLabel lblBackpackSize = new javax.swing.JLabel();
+        lblBackpackSize = new javax.swing.JLabel();
         progBackpackSize = new javax.swing.JProgressBar();
         lblPredators = new javax.swing.JLabel();
         lblKiwisCounted = new javax.swing.JLabel();
         txtKiwisCounted = new javax.swing.JLabel();
         txtPredatorsLeft = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Diffculty = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         javax.swing.JPanel pnlMovement = new javax.swing.JPanel();
@@ -247,7 +250,7 @@ public class KiwiCountUI
         pnlIsland.setLayout(pnlIslandLayout);
         pnlIslandLayout.setHorizontalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
+            .addGap(0, 492, Short.MAX_VALUE)
         );
         pnlIslandLayout.setVerticalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,8 +266,6 @@ public class KiwiCountUI
         pnlPlayerData.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         lblPlayerName.setText("Name:");
-
-        txtPlayerName.setText("Player Name");
 
         lblPlayerStamina.setText("Stamina:");
 
@@ -293,91 +294,98 @@ public class KiwiCountUI
 
         jLabel2.setText("Diffculty:");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("Easy");
 
         javax.swing.GroupLayout pnlPlayerDataLayout = new javax.swing.GroupLayout(pnlPlayerData);
         pnlPlayerData.setLayout(pnlPlayerDataLayout);
         pnlPlayerDataLayout.setHorizontalGroup(
             pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPlayerDataLayout.createSequentialGroup()
-                .addComponent(lblPlayerName)
-                .addGap(102, 102, 102)
-                .addComponent(txtPlayerName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
-            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
                 .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPlayerDataLayout.createSequentialGroup()
-                        .addComponent(lblPlayerStamina)
-                        .addGap(53, 53, 53)
-                        .addComponent(progPlayerStamina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPlayerName)
+                            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                .addComponent(lblPlayerStamina)
+                                .addGap(68, 68, 68)
+                                .addComponent(progPlayerStamina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                .addComponent(lblBackpackWeight)
+                                .addGap(25, 25, 25)
+                                .addComponent(progBackpackWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                .addComponent(lblBackpackSize)
+                                .addGap(40, 40, 40)
+                                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(Diffculty, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(progBackpackSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(pnlPlayerDataLayout.createSequentialGroup()
-                        .addComponent(lblBackpackWeight)
-                        .addGap(10, 10, 10)
-                        .addComponent(progBackpackWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
-                        .addComponent(lblBackpackSize)
-                        .addGap(25, 25, 25)
-                        .addComponent(progBackpackSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
                         .addComponent(lblPredators)
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtPredatorsLeft))
                     .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
                         .addComponent(lblKiwisCounted)
-                        .addGap(11, 11, 11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtKiwisCounted)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
         pnlPlayerDataLayout.setVerticalGroup(
             pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPlayerDataLayout.createSequentialGroup()
-                .addGap(2, 2, 2)
+                .addComponent(lblPlayerName)
+                .addGap(1, 1, 1)
                 .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPlayerName)
-                    .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtPlayerName)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
-                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(lblPlayerStamina))
+                    .addComponent(lblPlayerStamina)
                     .addComponent(progPlayerStamina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                .addGap(3, 3, 3)
                 .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(lblBackpackWeight))
+                    .addComponent(lblBackpackWeight)
                     .addComponent(progBackpackWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                .addGap(3, 3, 3)
                 .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                    .addComponent(lblBackpackSize)
+                    .addComponent(progBackpackSize, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPlayerDataLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(Diffculty))
                         .addGap(1, 1, 1)
-                        .addComponent(lblBackpackSize))
-                    .addComponent(progBackpackSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(2, 2, 2)
-                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPredators)
-                    .addComponent(txtPredatorsLeft))
-                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblKiwisCounted)
-                    .addComponent(txtKiwisCounted)))
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3)))
+                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPredators)
+                            .addComponent(txtPredatorsLeft))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblKiwisCounted)
+                            .addComponent(txtKiwisCounted))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlPlayerLayout = new javax.swing.GroupLayout(pnlPlayer);
         pnlPlayer.setLayout(pnlPlayerLayout);
         pnlPlayerLayout.setHorizontalGroup(
             pnlPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPlayerData, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlPlayerData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         pnlPlayerLayout.setVerticalGroup(
             pnlPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPlayerData, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlPlayerData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -788,11 +796,6 @@ public class KiwiCountUI
         game.diff.hard();
     }//GEN-LAST:event_HardActionPerformed
 
-    private void progPlayerStaminaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_progPlayerStaminaStateChanged
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_progPlayerStaminaStateChanged
-
     private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
         JOptionPane.showMessageDialog(
                 this,
@@ -832,6 +835,10 @@ public class KiwiCountUI
                 JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_rulesActionPerformed
 
+    private void progPlayerStaminaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_progPlayerStaminaStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_progPlayerStaminaStateChanged
+
     /**
      * Creates and initialises the island grid.
      */
@@ -852,6 +859,7 @@ public class KiwiCountUI
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Diffculty;
     private javax.swing.JMenuItem Easy;
     private javax.swing.JMenuItem Exit;
     private javax.swing.JMenuItem Hard;
@@ -866,16 +874,22 @@ public class KiwiCountUI
     private javax.swing.JButton btnMoveSouth;
     private javax.swing.JButton btnMoveWest;
     private javax.swing.JButton btnUse;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblBackpackSize;
+    private javax.swing.JLabel lblBackpackWeight;
     private javax.swing.JLabel lblKiwisCounted;
+    private javax.swing.JLabel lblPlayerName;
+    private javax.swing.JLabel lblPlayerStamina;
     private javax.swing.JLabel lblPredators;
     private javax.swing.JList listInventory;
     private javax.swing.JList listObjects;
     private javax.swing.JPanel pnlIsland;
+    private javax.swing.JPanel pnlPlayerData;
     private javax.swing.JProgressBar progBackpackSize;
     private javax.swing.JProgressBar progBackpackWeight;
     private javax.swing.JProgressBar progPlayerStamina;
