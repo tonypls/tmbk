@@ -196,14 +196,14 @@ public class KiwiCountUI
         pnlIsland = new javax.swing.JPanel();
         javax.swing.JPanel pnlControls = new javax.swing.JPanel();
         javax.swing.JPanel pnlPlayer = new javax.swing.JPanel();
-        pnlPlayerData = new javax.swing.JPanel();
-        lblPlayerName = new javax.swing.JLabel();
+        javax.swing.JPanel pnlPlayerData = new javax.swing.JPanel();
+        javax.swing.JLabel lblPlayerName = new javax.swing.JLabel();
         txtPlayerName = new javax.swing.JLabel();
-        lblPlayerStamina = new javax.swing.JLabel();
+        javax.swing.JLabel lblPlayerStamina = new javax.swing.JLabel();
         progPlayerStamina = new javax.swing.JProgressBar();
-        lblBackpackWeight = new javax.swing.JLabel();
+        javax.swing.JLabel lblBackpackWeight = new javax.swing.JLabel();
         progBackpackWeight = new javax.swing.JProgressBar();
-        lblBackpackSize = new javax.swing.JLabel();
+        javax.swing.JLabel lblBackpackSize = new javax.swing.JLabel();
         progBackpackSize = new javax.swing.JProgressBar();
         lblPredators = new javax.swing.JLabel();
         lblKiwisCounted = new javax.swing.JLabel();
@@ -212,7 +212,7 @@ public class KiwiCountUI
         jLabel1 = new javax.swing.JLabel();
         Diffculty = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        diffcul = new javax.swing.JLabel();
         javax.swing.JPanel pnlMovement = new javax.swing.JPanel();
         btnMoveNorth = new javax.swing.JButton();
         btnMoveSouth = new javax.swing.JButton();
@@ -294,8 +294,6 @@ public class KiwiCountUI
 
         jLabel2.setText("Diffculty:");
 
-        jLabel3.setText("Easy");
-
         javax.swing.GroupLayout pnlPlayerDataLayout = new javax.swing.GroupLayout(pnlPlayerData);
         pnlPlayerData.setLayout(pnlPlayerDataLayout);
         pnlPlayerDataLayout.setHorizontalGroup(
@@ -326,7 +324,7 @@ public class KiwiCountUI
                                     .addGroup(pnlPlayerDataLayout.createSequentialGroup()
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(diffcul))))))
                     .addGroup(pnlPlayerDataLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(lblPredators)
@@ -364,7 +362,7 @@ public class KiwiCountUI
                         .addGap(1, 1, 1)
                         .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3)))
+                            .addComponent(diffcul)))
                     .addGroup(pnlPlayerDataLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -693,6 +691,10 @@ public class KiwiCountUI
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setText(String text){
+        diffcul.setText(text);
+    }
+    
     private void btnMoveEastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveEastActionPerformed
         game.playerMove(MoveDirection.EAST);
     }//GEN-LAST:event_btnMoveEastActionPerformed
@@ -874,22 +876,17 @@ public class KiwiCountUI
     private javax.swing.JButton btnMoveSouth;
     private javax.swing.JButton btnMoveWest;
     private javax.swing.JButton btnUse;
+    private javax.swing.JLabel diffcul;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel lblBackpackSize;
-    private javax.swing.JLabel lblBackpackWeight;
     private javax.swing.JLabel lblKiwisCounted;
-    private javax.swing.JLabel lblPlayerName;
-    private javax.swing.JLabel lblPlayerStamina;
     private javax.swing.JLabel lblPredators;
     private javax.swing.JList listInventory;
     private javax.swing.JList listObjects;
     private javax.swing.JPanel pnlIsland;
-    private javax.swing.JPanel pnlPlayerData;
     private javax.swing.JProgressBar progBackpackSize;
     private javax.swing.JProgressBar progBackpackWeight;
     private javax.swing.JProgressBar progPlayerStamina;
