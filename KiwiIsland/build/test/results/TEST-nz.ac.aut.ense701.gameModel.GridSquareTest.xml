@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="DESKTOP-NG34K0M" name="nz.ac.aut.ense701.gameModel.GridSquareTest" skipped="0" tests="22" time="0.06" timestamp="2017-06-01T23:28:39">
+<testsuite errors="0" failures="0" hostname="DESKTOP-NG34K0M" name="nz.ac.aut.ense701.gameModel.GridSquareTest" skipped="0" tests="22" time="0.084" timestamp="2017-06-01T23:35:11">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="AU" />
     <property name="nb.wait.for.caches" value="true" />
-    <property name="javac.test.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar" />
+    <property name="javac.test.classpath" value="${libs.absolutelayout.classpath}:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar" />
     <property name="libs.jsf20.maven-pom" value="" />
     <property name="libs.DataBindingME.src" value="C:\Program Files\NetBeans 8.1\mobility\sources\netbeans_databindingme-src.zip" />
     <property name="libs.spring-webmvc4.0.src" value="" />
@@ -58,7 +58,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.GridSquareTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.GridSquareTest.xml crashfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junitvmwatcher8332895307958350003.properties propsfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junit5288639428627939047.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner nz.ac.aut.ense701.gameModel.GridSquareTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\results\TEST-nz.ac.aut.ense701.gameModel.GridSquareTest.xml crashfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junitvmwatcher6143233919513046836.properties propsfile=C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\junit4553979412050681150.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -72,7 +72,7 @@
     <property name="user.country" value="AU" />
     <property name="manifest.file" value="manifest.mf" />
     <property name="javadoc.encoding" value="UTF-8" />
-    <property name="javac.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar" />
+    <property name="javac.classpath" value="${libs.absolutelayout.classpath}:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar" />
     <property name="libs.jsp-compilation-syscp.src" value="" />
     <property name="libs.spring-framework400.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-aop-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-aspects-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-beans-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-build-src-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-context-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-context-support-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-core-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-expression-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-framework-bom-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-instrument-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-instrument-tomcat-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-jdbc-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-jms-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-messaging-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-orm-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-oxm-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-test-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-tx-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-web-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-webmvc-portlet-4.0.1.RELEASE.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-websocket-4.0.1.RELEASE.jar" />
     <property name="debug-transport" value="dt_shmem" />
@@ -103,7 +103,7 @@
     <property name="file.separator" value="\" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
-    <property name="javac.test.processorpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar" />
+    <property name="javac.test.processorpath" value="${libs.absolutelayout.classpath}:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar" />
     <property name="netbeans.buildnumber" value="201510222201" />
     <property name="libs.JWSAntTasks.javadoc" value="" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
@@ -117,7 +117,6 @@
     <property name="ant.home" value="C:\Program Files\NetBeans 8.1\extide\ant" />
     <property name="libs.junit_4.src" value="C:\Program Files\NetBeans 8.1\platform\docs\junit-4.12-sources.jar" />
     <property name="libs.testng.classpath" value="C:\Program Files\NetBeans 8.1\platform\modules\ext\testng-6.8.1-dist.jar" />
-    <property name="libs.absolutelayout.maven-pom" value="" />
     <property name="ant.java.version" value="1.8" />
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_74\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Python\anaconda;C:\Python\anaconda\Scripts;C:\Python\anaconda\Library\bin;C:\Python\Scripts\;C:\Python\;C:\Users\TonyAlien\AppData\Local\Programs\EmEditor;C:\Users\TonyAlien\AppData\Local\atom\bin;C:\Users\TonyAlien\AppData\Roaming\npm;C:\Users\TonyAlien\AppData\Local\Microsoft\WindowsApps;;." />
     <property name="javadoc.author" value="false" />
@@ -147,7 +146,7 @@
     <property name="manifest.available" value="true" />
     <property name="libs.primefaces.javadoc" value="" />
     <property name="libs.spring-framework300.maven-pom" value="" />
-    <property name="run.test.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
+    <property name="run.test.classpath" value="${libs.absolutelayout.classpath}:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
     <property name="ant.project.invoked-targets" value="test" />
     <property name="test.binaryexcludes" value="" />
     <property name="libs.swing-layout.javadoc" value="C:\Program Files\NetBeans 8.1\platform\docs\swing-layout-1.0.4-doc.zip" />
@@ -181,7 +180,7 @@
     <property name="libs.jpa20-persistence.javadoc" value="C:\Program Files\NetBeans 8.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_74\jre" />
     <property name="libs.jsp-compilation.src" value="" />
-    <property name="debug.test.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
+    <property name="debug.test.classpath" value="${libs.absolutelayout.classpath}:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
     <property name="libs.javaee-endorsed-api-6.0.classpath" value="C:\Program Files\NetBeans 8.1\enterprise\modules\ext\javaee6-endorsed\javax.annotation.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\javaee6-endorsed\jaxb-api-osgi.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\javaee6-endorsed\webservices-api-osgi.jar" />
     <property name="libs.javaee-api-6.0.src" value="" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
@@ -196,7 +195,7 @@
     <property name="libs.junit_4.javadoc" value="C:\Program Files\NetBeans 8.1\platform\docs\junit-4.12-javadoc.jar" />
     <property name="platforms.JDK_1.8.bootclasspath" value="C:\Program Files\Java\jdk1.8.0_131\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_131\jre\classes;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar" />
     <property name="libs.javaee-web-api-6.0.maven-pom" value="" />
-    <property name="run.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes" />
+    <property name="run.classpath" value="${libs.absolutelayout.classpath}:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes" />
     <property name="jna.boot.library.name" value="jnidispatch-410" />
     <property name="libs.javaee-endorsed-api-6.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.javaee-api-7.0.classpath" value="C:\Program Files\NetBeans 8.1\enterprise\modules\ext\javaee-api-7.0.jar" />
@@ -213,7 +212,7 @@
     <property name="javadoc.use" value="true" />
     <property name="sun.java2d.noddraw" value="true" />
     <property name="libs.jsp-compiler.classpath" value="C:\Program Files\NetBeans 8.1\enterprise\ant\extra\jspcompile.jar" />
-    <property name="javac.processorpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar" />
+    <property name="javac.processorpath" value="${libs.absolutelayout.classpath}:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar" />
     <property name="libs.hamcrest.maven-pom" value="" />
     <property name="ant.file.type.KiwiIsland" value="file" />
     <property name="javac.compilerargs" value="-Xlint:unchecked" />
@@ -239,7 +238,7 @@
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_74\jre\bin" />
     <property name="have.sources" value="true" />
     <property name="libs.hamcrest.javadoc" value="" />
-    <property name="debug.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes" />
+    <property name="debug.classpath" value="${libs.absolutelayout.classpath}:C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:build/classes" />
     <property name="javac.external.vm" value="false" />
     <property name="javadoc.private" value="false" />
     <property name="test.src.dir" value="test" />
@@ -270,7 +269,6 @@
     <property name="jar.index" value="false" />
     <property name="libs.CopyLibs.maven-pom" value="" />
     <property name="libs.spring-framework300.javadoc" value="" />
-    <property name="libs.absolutelayout.javadoc" value="" />
     <property name="java.specification.name" value="Java Platform API Specification" />
     <property name="do.archive+main.class.available" value="true" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
@@ -296,8 +294,8 @@
     <property name="work.dir" value="C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland" />
     <property name="libs.jaxb.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\jaxb-impl.jar;C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\jaxb1-impl.jar;C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
     <property name="do.depend" value="false" />
-    <property name="libs.j2me_common_ant.classpath" value="C:\Program Files\NetBeans 8.1\mobility\modules\org-netbeans-modules-j2me-common-ant.jar;C:\Program Files\NetBeans 8.1\java\modules\org-netbeans-modules-classfile.jar" />
     <property name="dist.javadoc.dir" value="dist/javadoc" />
+    <property name="libs.j2me_common_ant.classpath" value="C:\Program Files\NetBeans 8.1\mobility\modules\org-netbeans-modules-j2me-common-ant.jar;C:\Program Files\NetBeans 8.1\java\modules\org-netbeans-modules-classfile.jar" />
     <property name="libs.spring-webmvc3.0.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar" />
     <property name="libs.swing-layout.classpath" value="C:\Program Files\NetBeans 8.1\platform\modules\ext\swing-layout-1.0.4.jar" />
     <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
@@ -315,8 +313,8 @@
     <property name="built-jar.properties" value="C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
-    <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
     <property name="libs.jpa2-persistence.src" value="" />
+    <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
     <property name="annotation.processing.enabled" value="true" />
     <property name="libs.jsf20.src" value="" />
     <property name="libs.jpa20-persistence.src" value="" />
@@ -336,8 +334,8 @@
     <property name="debug-transport-by-os" value="dt_shmem" />
     <property name="sun.jnu.encoding" value="Cp1252" />
     <property name="libs.MySQLDriver.src" value="" />
-    <property name="java.runtime.version" value="1.8.0_74-b02" />
     <property name="build.test.results.dir" value="build/test/results" />
+    <property name="java.runtime.version" value="1.8.0_74-b02" />
     <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar" />
     <property name="user.timezone" value="" />
@@ -345,21 +343,19 @@
     <property name="do.jar" value="true" />
     <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
     <property name="netbeans.dirs" value="C:\Program Files\NetBeans 8.1\nb;C:\Program Files\NetBeans 8.1\ergonomics;C:\Program Files\NetBeans 8.1\ide;C:\Program Files\NetBeans 8.1\extide;C:\Program Files\NetBeans 8.1\java;C:\Program Files\NetBeans 8.1\apisupport;C:\Program Files\NetBeans 8.1\webcommon;C:\Program Files\NetBeans 8.1\websvccommon;C:\Program Files\NetBeans 8.1\enterprise;C:\Program Files\NetBeans 8.1\mobility;C:\Program Files\NetBeans 8.1\profiler;C:\Program Files\NetBeans 8.1\python;C:\Program Files\NetBeans 8.1\php;C:\Program Files\NetBeans 8.1\identity;C:\Program Files\NetBeans 8.1\harness;C:\Program Files\NetBeans 8.1\cnd;C:\Program Files\NetBeans 8.1\cndext;C:\Program Files\NetBeans 8.1\dlight;C:\Program Files\NetBeans 8.1\groovy;C:\Program Files\NetBeans 8.1\extra;C:\Program Files\NetBeans 8.1\javacard;C:\Program Files\NetBeans 8.1\javafx" />
-    <property name="libs.jsf20.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.jstl.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.jsf20.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_74\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
     <property name="libs.metro.src" value="" />
     <property name="endorsed.classpath" value="" />
-    <property name="libs.absolutelayout.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar" />
     <property name="excludes" value="" />
     <property name="libs.metro.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-api.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-extra.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-rt.jar;C:\Program Files\NetBeans 8.1\enterprise\modules\ext\metro\webservices-tools.jar" />
     <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.jpa2-persistence.javadoc" value="C:\Program Files\NetBeans 8.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="C:\Program Files\NetBeans 8.1\mobility\modules\docs\netbeans_databindingme-api.zip" />
+    <property name="java.class.path" value="C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar;C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar;C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\classes;C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar;C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\classes;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant-junit4.jar" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="C:\Program Files\NetBeans 8.1\java\modules\ext\AbsoluteLayout.jar;C:\Program Files\NetBeans 8.1\java\modules\ext\beansbinding-1.2.1.jar;C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar;C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\classes;C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar;C:\Users\TonyAlien\Documents\Software Engineering\New KiwiIsland\KiwiIsland\build\test\classes;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans 8.1\extide\ant\lib\ant-junit4.jar" />
     <property name="do.mkdist" value="true" />
-    <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar" />
     <property name="os.version" value="10.0" />
     <property name="application.args" value="" />
@@ -387,8 +383,8 @@
     <property name="libs.testng.javadoc" value="C:\Program Files\NetBeans 8.1\platform\docs\testng-6.8.1-javadoc.zip" />
     <property name="libs.DataBindingME-PIM.src" value="C:\Program Files\NetBeans 8.1\mobility\sources\netbeans_databindingme_pim-src.zip" />
     <property name="platforms.JDK_1.8.home" value="C:\Program Files\Java\jdk1.8.0_131" />
-    <property name="libs.PostgreSQLDriver.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\ext\postgresql-9.2-1002.jdbc4.jar" />
     <property name="user.script" value="" />
+    <property name="libs.PostgreSQLDriver.classpath" value="C:\Program Files\NetBeans 8.1\ide\modules\ext\postgresql-9.2-1002.jdbc4.jar" />
     <property name="libs.jsf12.maven-pom" value="" />
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
@@ -400,36 +396,36 @@
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
     <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
-    <property name="jdkBug6558476" value="false" />
     <property name="javadoc.nonavbar" value="false" />
+    <property name="jdkBug6558476" value="false" />
     <property name="libs.spring-webmvc4.0.classpath" value="C:\Program Files\NetBeans 8.1\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar" />
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.1\enterprise\docs\javaee-doc-api.jar" />
     <property name="" value="======" />
   </properties>
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testHasOccupantNotPresent" time="0.002" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetOccupantStringRepresentationSingle" time="0.001" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testHasOccupantNotPresent" time="0.003" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetOccupantStringRepresentationSingle" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testSetVisible" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testIsExploredNewSquare" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetTerrain" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetTerrainString" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetTerrainString" time="0.001" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetOccupantStringRepresentationNoOccupants" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testAddOccupantNull" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testIsVisibleNewSquare" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testAddOccupantWhenNotFull" time="0.001" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testHasPlayerWithPlayer" time="0.001" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testAddOccupantWhenNotFull" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testHasPlayerWithPlayer" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetOccupants" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testAddOccupantWhenFull" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testHasOccupantPresent" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testRemoveOccupantWhenPresent" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testRemoveOccupantWhenPresent" time="0.001" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testHasPlayerNoPlayer" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testSetTerrain" time="0.0" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testRemoveOccupantWhenNotPresent" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testRemoveOccupantWhenNull" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testRemoveOccupantWhenNull" time="0.001" />
   <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testAddOccupantDuplicate" time="0.0" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetOccupantStringRepresentationMultipleOccupants" time="0.001" />
-  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testsetExplored" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testGetOccupantStringRepresentationMultipleOccupants" time="0.0" />
+  <testcase classname="nz.ac.aut.ense701.gameModel.GridSquareTest" name="testsetExplored" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
