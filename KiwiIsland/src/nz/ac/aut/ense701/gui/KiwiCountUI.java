@@ -10,6 +10,7 @@ import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
 import nz.ac.aut.ense701.gameModel.Levels;
+import nz.ac.aut.ense701.gameModel.Player;
 
 /*
  * User interface form for Kiwi Island.
@@ -106,6 +107,32 @@ public class KiwiCountUI
                     JOptionPane.INFORMATION_MESSAGE); 
         }
     }         
+            
+                    // if the game is over
+        if (game.getState() == GameState.LOST || game.getState() == GameState.WON){
+            
+            int score;
+            Player player = game.getPlayer();
+            score = game.getKiwiCount() * 1500; // get 1500 points for each kiwi
+            score -= game.getPredatorsRemaining() * 500; // take 500 points for each predator remaining
+            score += player.getCurrentBackpackWeight() * 100; // add 1000 points for each item
+            //score += player.hasItem(player.getInventory())
+            //score += player.
+            //score += game.getPlayer().getStaminaLevel() * 50;
+            System.out.print(player.getInventory());
+            
+            /*
+            kiwi - 1000
+            stamina remaining * 50
+            
+            
+            
+            */
+            
+            System.out.print("Your score: "+score);
+        }
+            
+            
             
         // check for "game over" or "game won"
         if (game.getState() == GameState.LOST) {

@@ -31,6 +31,7 @@ public class GridSquarePanel extends javax.swing.JPanel
      */
       
     BufferedImage image;
+    BufferedImage player;
     
     public GridSquarePanel(Game game, int row, int column)
     {
@@ -38,6 +39,7 @@ public class GridSquarePanel extends javax.swing.JPanel
         this.row    = row;
         this.column = column;
         initComponents();
+        
     }
 
     // this method is used by update() to load images from file
@@ -49,11 +51,22 @@ public class GridSquarePanel extends javax.swing.JPanel
         }
     }
     
+       // this method is used by update() to load images from file
+    public void setImage2(String file){   
+        try {
+            player = ImageIO.read(new File(file));
+        } catch (IOException ex) {
+            Logger.getLogger(GridSquarePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     // override the BufferedImage method to update and draw the image set by update() method
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image, 1, 0, null);        
+        g.drawImage(image, 1, 0, null);  
+        g.drawImage(player, 1, 0, null); 
+         
     }
     
     /**
@@ -66,18 +79,27 @@ public class GridSquarePanel extends javax.swing.JPanel
         boolean squareVisible = game.isVisible(row, column);
         boolean squareExplored = game.isExplored(row, column);
         
+        if (game.hasPlayer(row, column)){
+            setImage2("images/player.png");
+        } else {
+            player = null;
+        }
+        
         //ImageIcon image = null;//new ImageIcon("images/blank.png");
         JLabel lblImage = new JLabel(); // create a new label to put an image on
         
         // call the method to set a new Buffered image to this panel
-        switch ( terrain )
-        {
-            case SAND     : setImage("images/sand.png"); break;// = new ImageIcon("images/sand.png"); break;
-            case FOREST   : setImage("images/forest.png"); break;
-            case WETLAND : setImage("images/wetland.png"); break;
-            case SCRUB : setImage("images/scrub.png"); break;
-            case WATER    : setImage("images/water.png"); break;
-            default  : image = null; break;
+        
+        if (squareVisible && image == null){
+            switch ( terrain )
+            {
+                case SAND     : setImage("images/sand.png"); break;// = new ImageIcon("images/sand.png"); break;
+                case FOREST   : setImage("images/forest.png"); break;
+                case WETLAND : setImage("images/wetland.png"); break;
+                case SCRUB : setImage("images/scrub.png"); break;
+                case WATER    : setImage("images/water.png"); break;
+                default  : image = null; break;
+            }
         }
        
 // this is old code that use to change the graphics, trying BufferedImage instead of IconImage
@@ -108,10 +130,14 @@ public class GridSquarePanel extends javax.swing.JPanel
        
         // set the redsquare border to active if the player is here
         setBorder(game.hasPlayer(row,column) ? activeBorder : normalBorder);
+       
 
         // add the imageIcon to the gridsquare panel
         //lblImage.setIcon((Icon) image); // add the image to the label
         this.add(lblImage); // add the jlabel image to the current gridsquare
+        
+        JLabel lblImage2 = new JLabel(); 
+        this.add(lblImage2);
         
     }
     
