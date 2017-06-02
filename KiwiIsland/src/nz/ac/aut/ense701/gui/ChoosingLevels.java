@@ -125,14 +125,21 @@ public class ChoosingLevels extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EasyActionPerformed
-             
-       games.setVisible(true);
+       
+          
+       
+      games.setText("easy");
+        games.setVisible(true);
        game.diff.easy();
        dispose();
+       
+           
+       
     }//GEN-LAST:event_EasyActionPerformed
 
     private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
-       games.setVisible(true);
+      games.setText("Medium");
+        games.setVisible(true);
        game.diff.medium();
        dispose();
     }//GEN-LAST:event_MediumActionPerformed
@@ -142,9 +149,13 @@ public class ChoosingLevels extends javax.swing.JFrame {
     }//GEN-LAST:event_QuitActionPerformed
 
     private void HardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HardActionPerformed
+        
+        games.setText("Hard");
         games.setVisible(true);
         game.diff.hard();
         dispose();
+        
+        
     }//GEN-LAST:event_HardActionPerformed
 
     /**

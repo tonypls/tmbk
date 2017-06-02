@@ -33,9 +33,11 @@ public class GameTest extends junit.framework.TestCase
         // Create a new game from the data file.
         // Player is in position 2,0 & has 100 units of stamina
         game           = new Game();
+        game.createTestGame();
         playerPosition = game.getPlayer().getPosition();
         player         = game.getPlayer();
         island = game.getIsland();
+        
     }
 
     /**
@@ -435,6 +437,7 @@ public class GameTest extends junit.framework.TestCase
         //Firstly player needs a trap
         Tool trap = new Tool(playerPosition,"Trap", "A predator trap",1.0, 1.0);
         game.collectItem(trap);
+        game.createTestGame();
         
         //Now player needs to trap all predators
         //Predator 1

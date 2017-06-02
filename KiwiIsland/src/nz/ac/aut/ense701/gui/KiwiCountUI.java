@@ -5,12 +5,14 @@ import java.awt.GridLayout;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import java.awt.event.*;
+
 import javax.swing.ImageIcon;
 import nz.ac.aut.ense701.gameModel.Game;
 import nz.ac.aut.ense701.gameModel.GameEventListener;
 import nz.ac.aut.ense701.gameModel.GameState;
 import nz.ac.aut.ense701.gameModel.MoveDirection;
-import nz.ac.aut.ense701.gameModel.Levels;
+
+import nz.ac.aut.ense701.gameModel.Player;
 
 /*
  * User interface form for Kiwi Island.
@@ -107,6 +109,32 @@ public class KiwiCountUI
                     JOptionPane.INFORMATION_MESSAGE); 
         }
     }         
+            
+                    // if the game is over
+        if (game.getState() == GameState.LOST || game.getState() == GameState.WON){
+            
+            int score;
+            Player player = game.getPlayer();
+            score = game.getKiwiCount() * 1500; // get 1500 points for each kiwi
+            score -= game.getPredatorsRemaining() * 500; // take 500 points for each predator remaining
+            score += player.getCurrentBackpackWeight() * 100; // add 1000 points for each item
+            //score += player.hasItem(player.getInventory())
+            //score += player.
+            //score += game.getPlayer().getStaminaLevel() * 50;
+            System.out.print(player.getInventory());
+            
+            /*
+            kiwi - 1000
+            stamina remaining * 50
+            
+            
+            
+            */
+            
+            System.out.print("Your score: "+score);
+        }
+            
+            
             
         // check for "game over" or "game won"
         if (game.getState() == GameState.LOST) {
@@ -206,6 +234,10 @@ public class KiwiCountUI
         lblKiwisCounted = new javax.swing.JLabel();
         txtKiwisCounted = new javax.swing.JLabel();
         txtPredatorsLeft = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Diffculty = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        diffcul = new javax.swing.JLabel();
         javax.swing.JPanel pnlMovement = new javax.swing.JPanel();
         btnMoveNorth = new javax.swing.JButton();
         btnMoveSouth = new javax.swing.JButton();
@@ -243,11 +275,11 @@ public class KiwiCountUI
         pnlIsland.setLayout(pnlIslandLayout);
         pnlIslandLayout.setHorizontalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGap(0, 492, Short.MAX_VALUE)
         );
         pnlIslandLayout.setVerticalGroup(
             pnlIslandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 596, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         pnlContent.add(pnlIsland, java.awt.BorderLayout.CENTER);
@@ -255,33 +287,12 @@ public class KiwiCountUI
         pnlControls.setLayout(new java.awt.GridBagLayout());
 
         pnlPlayer.setBorder(javax.swing.BorderFactory.createTitledBorder("Player"));
-        pnlPlayer.setLayout(new java.awt.BorderLayout());
 
         pnlPlayerData.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        pnlPlayerData.setLayout(new java.awt.GridBagLayout());
 
         lblPlayerName.setText("Name:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weighty = 1.0;
-        pnlPlayerData.add(lblPlayerName, gridBagConstraints);
-
-        txtPlayerName.setText("Player Name");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
-        pnlPlayerData.add(txtPlayerName, gridBagConstraints);
 
         lblPlayerStamina.setText("Stamina:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        pnlPlayerData.add(lblPlayerStamina, gridBagConstraints);
 
         progPlayerStamina.setStringPainted(true);
         progPlayerStamina.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -289,82 +300,116 @@ public class KiwiCountUI
                 progPlayerStaminaStateChanged(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
-        pnlPlayerData.add(progPlayerStamina, gridBagConstraints);
 
         lblBackpackWeight.setText("Backpack Weight:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        pnlPlayerData.add(lblBackpackWeight, gridBagConstraints);
 
         progBackpackWeight.setStringPainted(true);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
-        pnlPlayerData.add(progBackpackWeight, gridBagConstraints);
 
         lblBackpackSize.setText("Backpack Size:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        pnlPlayerData.add(lblBackpackSize, gridBagConstraints);
 
         progBackpackSize.setStringPainted(true);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
-        pnlPlayerData.add(progBackpackSize, gridBagConstraints);
 
         lblPredators.setText("Predators Left:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        pnlPlayerData.add(lblPredators, gridBagConstraints);
 
         lblKiwisCounted.setText("Kiwis Counted :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        pnlPlayerData.add(lblKiwisCounted, gridBagConstraints);
 
         txtKiwisCounted.setText("0");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        pnlPlayerData.add(txtKiwisCounted, gridBagConstraints);
 
         txtPredatorsLeft.setText("P");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        pnlPlayerData.add(txtPredatorsLeft, gridBagConstraints);
 
-        pnlPlayer.add(pnlPlayerData, java.awt.BorderLayout.WEST);
+        jLabel2.setText("Diffculty:");
+
+        javax.swing.GroupLayout pnlPlayerDataLayout = new javax.swing.GroupLayout(pnlPlayerData);
+        pnlPlayerData.setLayout(pnlPlayerDataLayout);
+        pnlPlayerDataLayout.setHorizontalGroup(
+            pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPlayerName)
+                            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                .addComponent(lblPlayerStamina)
+                                .addGap(68, 68, 68)
+                                .addComponent(progPlayerStamina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                .addComponent(lblBackpackWeight)
+                                .addGap(25, 25, 25)
+                                .addComponent(progBackpackWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                .addComponent(lblBackpackSize)
+                                .addGap(40, 40, 40)
+                                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(Diffculty, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(progBackpackSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(diffcul))))))
+                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(lblPredators)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPredatorsLeft))
+                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(lblKiwisCounted)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtKiwisCounted)))
+                .addGap(28, 28, 28))
+        );
+        pnlPlayerDataLayout.setVerticalGroup(
+            pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                .addComponent(lblPlayerName)
+                .addGap(1, 1, 1)
+                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPlayerStamina)
+                    .addComponent(progPlayerStamina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblBackpackWeight)
+                    .addComponent(progBackpackWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblBackpackSize)
+                    .addComponent(progBackpackSize, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPlayerDataLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(Diffculty))
+                        .addGap(1, 1, 1)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(diffcul)))
+                    .addGroup(pnlPlayerDataLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPredators)
+                            .addComponent(txtPredatorsLeft))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlPlayerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblKiwisCounted)
+                            .addComponent(txtKiwisCounted))))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlPlayerLayout = new javax.swing.GroupLayout(pnlPlayer);
+        pnlPlayer.setLayout(pnlPlayerLayout);
+        pnlPlayerLayout.setHorizontalGroup(
+            pnlPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlPlayerData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        pnlPlayerLayout.setVerticalGroup(
+            pnlPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlPlayerData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -671,6 +716,10 @@ public class KiwiCountUI
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setText(String text){
+        diffcul.setText(text);
+    }
+    
     private void btnMoveEastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveEastActionPerformed
         game.playerMove(MoveDirection.EAST);
     }//GEN-LAST:event_btnMoveEastActionPerformed
@@ -774,11 +823,6 @@ public class KiwiCountUI
         game.diff.hard();
     }//GEN-LAST:event_HardActionPerformed
 
-    private void progPlayerStaminaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_progPlayerStaminaStateChanged
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_progPlayerStaminaStateChanged
-
     private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
         JOptionPane.showMessageDialog(
                 this,
@@ -818,6 +862,10 @@ public class KiwiCountUI
                 JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_rulesActionPerformed
 
+    private void progPlayerStaminaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_progPlayerStaminaStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_progPlayerStaminaStateChanged
+
     /**
      * Creates and initialises the island grid.
      */
@@ -838,6 +886,7 @@ public class KiwiCountUI
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Diffculty;
     private javax.swing.JMenuItem Easy;
     private javax.swing.JMenuItem Exit;
     private javax.swing.JMenuItem Hard;
@@ -852,6 +901,9 @@ public class KiwiCountUI
     private javax.swing.JButton btnMoveSouth;
     private javax.swing.JButton btnMoveWest;
     private javax.swing.JButton btnUse;
+    private javax.swing.JLabel diffcul;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
